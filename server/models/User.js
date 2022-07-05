@@ -41,13 +41,13 @@ const userSchema = new Schema(
     milestones: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'Quest'
+          ref: 'Milestone'
         }
     ],
     dailies: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'Quest'
+          ref: 'Daily'
         }
     ],
     friends: [
