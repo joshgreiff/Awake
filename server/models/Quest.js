@@ -24,6 +24,11 @@ const questSchema = new Schema(
       type: String,
       required: true
     },
+    difficulty: {
+      type: String,
+      minlength: 1,
+      maxlength: 15
+    },
     milestones: [
         {
           type: Schema.Types.ObjectId,
