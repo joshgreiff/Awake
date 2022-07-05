@@ -55,7 +55,13 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User'
       }
-    ]
+    ],
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
   },
   {
     toJSON: {
@@ -83,6 +89,12 @@ userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
-const User = model('User', userSchema);
+userSchema.virtual('toNextLevel').get(function() {
+  const level = this.level
+  const toNext = Math.round( 0.04 * (level ** 3) + 0.8 * (level ** 2) + 2 * level)
+  return toNext
+})
 
-module.exports = User;
+const User = model('User', userSchema)
+
+module.exports = User
