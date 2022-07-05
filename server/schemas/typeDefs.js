@@ -1,12 +1,52 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-    type Me {
-        _id: ID
-    }
     type User {
-        _id: ID
+        _id: ID!
+        username: String!
+        email: String!
+        password: String!
+        coins: Int
+        level: Int
+        exp: Int
+        quests: [Quest]
+        milestones: [Milestone]
+        dailies: [Daily]
+        friends: [User]
     }
+
+    type Quest {
+        questTitle: String!
+        questDescription: String!
+        createdAt: Date
+        username: User
+        milestones: [Milestone]
+        dailies: [Daily]
+    }
+
+    type Daily {
+        dailyTitle: String!
+        dailyDescription: String
+        createdAt: Date
+        username: User
+        difficulty: String
+        timeCompleted: Int
+    }
+
+    type Milestone {
+        milestoneTitle: String!
+        milestoneDescription: String
+        rewards: [Reward]
+        createdAt: Date
+        username: User
+    }
+
+    type Post {
+        postContent: String!
+        createdSt: Date
+        username: User
+    }
+
     type Query {
         Me: User
     }
@@ -15,6 +55,7 @@ const typeDefs = gql`
     }
     type Auth {
         token: ID!
+        user: User
     }
 `;
 
