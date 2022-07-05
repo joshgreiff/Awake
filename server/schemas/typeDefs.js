@@ -42,7 +42,7 @@ const typeDefs = gql`
 
     type Post {
         postContent: String!
-        createdSt: String
+        createdAt: String
         username: User
     }
 
@@ -67,7 +67,13 @@ const typeDefs = gql`
         posts(community: String): [Post]
     }
     type Mutations {
-        login(Me: String!):Auth
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!):Auth
+        addQuest(username: String!, title: String!, description: String):Auth
+        addMilestone(username: String!, quest: String!, title: String!, description: String): Auth
+        addDaily(username: String!, quest: String!, title: String!, description: String, difficulty: String!): Auth
+        addCommunity(username: String!, title: String!, description: String): Auth
+        addPost(username: String!, community: String!, title: String, description: String): Auth
     }
     type Auth {
         token: ID!
