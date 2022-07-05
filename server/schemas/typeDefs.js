@@ -47,8 +47,25 @@ const typeDefs = gql`
         username: User
     }
 
+    type Community {
+        communityTitle: String!
+        communityDescription: String
+        createdAt: Date
+        username: User
+        users: [User]
+        posts: [Post]
+        quests: [Quest]
+    }
+
     type Query {
-        Me: User
+        me: User
+        users: [User]
+        user(username: String!): User
+        quests(username: String!): [Quest]
+        milestones(quest: String!): [Milestone]
+        dailies(quest: String!): [Daily]
+        communities: [Community]
+        posts(community: String): [post]
     }
     type Mutations {
         login(Me: String!):Auth
