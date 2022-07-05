@@ -18,7 +18,7 @@ const typeDefs = gql`
     type Quest {
         questTitle: String!
         questDescription: String!
-        createdAt: Date
+        createdAt: String
         username: User
         milestones: [Milestone]
         dailies: [Daily]
@@ -27,7 +27,7 @@ const typeDefs = gql`
     type Daily {
         dailyTitle: String!
         dailyDescription: String
-        createdAt: Date
+        createdAt: String
         username: User
         difficulty: String
         timeCompleted: Int
@@ -36,21 +36,20 @@ const typeDefs = gql`
     type Milestone {
         milestoneTitle: String!
         milestoneDescription: String
-        rewards: [Reward]
-        createdAt: Date
+        createdAt: String
         username: User
     }
 
     type Post {
         postContent: String!
-        createdSt: Date
+        createdSt: String
         username: User
     }
 
     type Community {
         communityTitle: String!
         communityDescription: String
-        createdAt: Date
+        createdAt: String
         username: User
         users: [User]
         posts: [Post]
@@ -65,7 +64,7 @@ const typeDefs = gql`
         milestones(quest: String!): [Milestone]
         dailies(quest: String!): [Daily]
         communities: [Community]
-        posts(community: String): [post]
+        posts(community: String): [Post]
     }
     type Mutations {
         login(Me: String!):Auth
