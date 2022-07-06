@@ -22,15 +22,18 @@ const userSchema = new Schema(
     },
     coins: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     level: {
         type: Number,
-        required: true
+        required: true,
+        default: 1
     },
     exp: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     quests: [
       {
