@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import Homepage from './components/Homepage';
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -15,7 +16,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <div>
-      <nav>test</nav>
+      <Nav></Nav>
       <main>
         <Homepage></Homepage>
       </main>
