@@ -1,12 +1,15 @@
 import react, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 import logo from '../../assets/logo/awake.svg';
+import Homepage from '../../components/Homepage/index';
+import { useState } from 'react';
 
 // useEffect(() => {
 //     document.title = capitalizeFirstLetter(currentCategory.name);
 // }, [currentCategory]);
 
-function Nav(props) {
+function Nav(props, {handlePageChange, setCurrentPage}) {
+
     const {
         categories = [],
         setCurrentCategory,
@@ -14,6 +17,7 @@ function Nav(props) {
         currentCategory,
         setContactSelected,
       } = props;
+
 return (
     <section>
         <header>
@@ -23,11 +27,26 @@ return (
         </header>
         <nav>
             <ul className="flex-row">
-            <li className="mx-2">
-            <a data-testid="home" href="#home" onClick={() => setContactSelected(false)}>
-              Home
-            </a>
-          </li>
+                <li className="mx-2">
+                    <a data-testid="shop" href="#shop" onClick={() => setContactSelected(false)}>
+                        Shop
+                    </a>
+                </li>
+                <li className="mx-2">
+                    <a data-testid="home" href="#home" onClick={() => handlePageChange('Home')}>
+                        Home
+                    </a>
+                </li>
+                <li className="mx-2">
+                    <a data-testid="quests" href="#quests" onClick={() => setContactSelected(false)}>
+                        Quests
+                    </a>
+                </li>
+                <li className="mx-2">
+                    <a data-testid="communities" href="#communities" onClick={() => setContactSelected(false)}>
+                        Communities
+                    </a>
+                </li>
             </ul>
         </nav>
     </section>
