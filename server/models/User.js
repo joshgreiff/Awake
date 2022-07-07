@@ -22,19 +22,25 @@ const userSchema = new Schema(
     },
     coins: {
         type: Number,
-        required: true,
+        required: false,
         default: 0
     },
     level: {
         type: Number,
-        required: true,
+        required: false,
         default: 1
     },
     exp: {
         type: Number,
-        required: true,
+        required: false,
         default: 0
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
     quests: [
       {
         type: Schema.Types.ObjectId,
@@ -91,6 +97,12 @@ userSchema.methods.isCorrectPassword = async function(password) {
 userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
+
+userSchema.virtual('questCount').get(function() {
+  return this.quests.length;
+})
+
+
 
 userSchema.virtual('toNextLevel').get(function() {
   const level = this.level
