@@ -77,7 +77,7 @@ const typeDefs = gql`
         post(_id: ID!): Post
 
     }
-    type Mutations {
+    type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!):Auth
         addQuest(username: String!, title: String!, description: String): Quest
