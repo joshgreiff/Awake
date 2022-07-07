@@ -32,6 +32,12 @@ const userSchema = new Schema(
         type: Number,
         required: true
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
     quests: [
       {
         type: Schema.Types.ObjectId,
