@@ -51,7 +51,7 @@ const typeDefs = gql`
     }
 
     type Community {
-        _id: ID!÷÷
+        _id: ID!
         communityTitle: String!
         communityDescription: String
         createdAt: String
