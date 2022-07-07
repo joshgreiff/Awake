@@ -5,6 +5,8 @@ import Homepage from './components/Homepage';
 import Nav from './components/Nav';
 import Shop from './components/Shop';
 import { useState } from 'react';
+import { ReactDOM } from 'react-dom/client';
+import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -16,28 +18,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('Home');
-
-    const renderPage = () => {
-        if (currentPage === 'Homepage') {
-           return <Homepage />
-        }
-        if (currentPage === 'Shop') {
-          return <Shop />
-        }
-     }
-
-    const handlePageChange = (page) => setCurrentPage(page);
-  return (
-    <div>
-      <Nav currentPage={currentPage} handlePageChange={handlePageChange}></Nav>
-      {renderPage()}
-      <main>
-        <Homepage />
-        <Shop />
-      </main>
-    </div>
-  );
+  return <Nav />
 }
 
 export default App;
