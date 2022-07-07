@@ -30,6 +30,11 @@ const milestoneSchema = new Schema(
       type: String,
       required: true
     },
+    difficulty: {
+      type: String,
+      minlength: 1,
+      maxlength: 15
+  },
   },
   {
     toJSON: {
