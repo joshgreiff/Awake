@@ -1,7 +1,16 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import Nav from './components/Nav';
+import Home from './components/Homepage';
+import Shop from './components/Shop';
+import Quests from './components/Quests';
+import Check from './components/Check-in';
+import Communities from './components/Communities';
+// import { ReactDOM } from 'react-dom/client';
+// import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
+
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -13,24 +22,30 @@ const client = new ApolloClient({
 });
 
 function App() {
+  let component 
+  switch (window.location.pathname) {
+    case "/":
+      component = <Home />
+      break
+    case "/Quests":
+      component = <Quests />
+      break
+    case "/Check":
+      component = <Check /> 
+      break
+    case "/Communities":
+      component = <Communities />
+      break
+    case "/Shop":
+      component = <Shop />
+      break
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Nav />
+      {component}
+    </>
+  )
 }
 
 export default App;
