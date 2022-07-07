@@ -21,8 +21,8 @@ db.once('open', async () => {
         userData.push({ username, email, password, coins, level, exp})
     }
 
-    // const createdUsers = await User.collection.insertMany(userData);
-    // console.log(createdUsers);
+    const createdUsers = await User.collection.insertMany(userData);
+    console.log(createdUsers);
 
     // for (let i = 0; i < 100; i += 1) {
     //     const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
