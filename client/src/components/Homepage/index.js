@@ -1,11 +1,3 @@
-import react from 'react';
-
-function Homepage() {
-    return (
-        <section>
-            <h1>testestestest</h1>
-        </section>
-    )
+export default function Home() {
+    return <h1>Home</h1>
 }
-
-export default Homepage;

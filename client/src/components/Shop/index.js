@@ -1,11 +1,3 @@
-import react from 'react';
-
-function Shop() {
-    return (
-        <section>
-            <h1>EricEricEricShopSHopShopSHOPSHOPSHOPSHOP</h1>
-        </section>
-    )
+export default function Shop() {
+    return <h1>Shop</h1>
 }
-
-export default Shop;

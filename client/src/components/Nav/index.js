@@ -1,6 +1,6 @@
 // import react, { useEffect } from 'react';
 // import { capitalizeFirstLetter } from '../../utils/helpers';
-// import logo from '../../assets/logo/awake.svg';
+import logo from '../../assets/logo/awake.svg';
 // import Homepage from '../../components/Homepage/index';
 // import { useState } from 'react';
 
@@ -58,7 +58,9 @@
 export default function Navbar() {
     return (
     <nav className="nav">
-        <a href="/" className="site-title">Awake</a>
+        <a href="/">
+            <img src={logo}></img>
+        </a>
         <ul>
             <li>
                 <a href="/Shop">Shop</a>
