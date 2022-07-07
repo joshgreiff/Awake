@@ -21,23 +21,23 @@ db.once('open', async () => {
         userData.push({ username, email, password, coins, level, exp})
     }
 
-    const createdUsers = await User.collection.insertMany(userData);
-    console.log(createdUsers);
+    // const createdUsers = await User.collection.insertMany(userData);
+    // console.log(createdUsers);
 
-    for (let i = 0; i < 100; i += 1) {
-        const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-        console.log(randomUserIndex);
-        const { _id: userId } = createdUsers[randomUserIndex];
+    // for (let i = 0; i < 100; i += 1) {
+    //     const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+    //     console.log(randomUserIndex);
+    //     const { _id: userId } = createdUsers[randomUserIndex];
     
-        let friendId = userId;
+    //     let friendId = userId;
     
-        while (friendId === userId) {
-          const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-          friendId = createdUsers[randomUserIndex];
-        }
+    //     while (friendId === userId) {
+    //       const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+    //       friendId = createdUsers[randomUserIndex];
+    //     }
     
-        await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
-    }
+    //     await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
+    // }
 
     // let createdQuests = []
     // for (let i =0; i < 100; i++) {

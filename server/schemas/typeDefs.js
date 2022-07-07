@@ -16,6 +16,7 @@ const typeDefs = gql`
     }
 
     type Quest {
+        _id: ID!
         questTitle: String!
         questDescription: String!
         createdAt: String
@@ -25,6 +26,7 @@ const typeDefs = gql`
     }
 
     type Daily {
+        _id: ID!
         dailyTitle: String!
         dailyDescription: String
         createdAt: String
@@ -34,6 +36,7 @@ const typeDefs = gql`
     }
 
     type Milestone {
+        _id: ID!
         milestoneTitle: String!
         milestoneDescription: String
         createdAt: String
@@ -41,12 +44,14 @@ const typeDefs = gql`
     }
 
     type Post {
+        _id: ID!
         postContent: String!
         createdAt: String
         username: User
     }
 
     type Community {
+        _id: ID!÷÷
         communityTitle: String!
         communityDescription: String
         createdAt: String
@@ -61,10 +66,16 @@ const typeDefs = gql`
         users: [User]
         user(username: String!): User
         quests(username: String!): [Quest]
+        quest(_id: ID!): Quest
         milestones(quest: String!): [Milestone]
+        milestone(_id: ID!): Milestone
         dailies(quest: String!): [Daily]
+        daily(_id: ID!): Daily
         communities: [Community]
+        community(_id: ID!): Community
         posts(community: String): [Post]
+        post(_id: ID!): Post
+
     }
     type Mutations {
         login(email: String!, password: String!): Auth
