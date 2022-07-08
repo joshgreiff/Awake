@@ -115,7 +115,7 @@ const resolvers = {
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { posts: posts._id } },
+                    { $push: { posts: post._id } },
                     { new: true }
                 )
 
