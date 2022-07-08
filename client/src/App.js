@@ -8,7 +8,7 @@ import Quests from './components/Quests';
 import Check from './components/Check-in';
 import Communities from './components/Communities';
 // import { ReactDOM } from 'react-dom/client';
-// import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
+import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
 
 
@@ -22,28 +22,18 @@ const client = new ApolloClient({
 });
 
 function App() {
-  let component 
-  switch (window.location.pathname) {
-    case "/":
-      component = <Home />
-      break
-    case "/Quests":
-      component = <Quests />
-      break
-    case "/Check":
-      component = <Check /> 
-      break
-    case "/Communities":
-      component = <Communities />
-      break
-    case "/Shop":
-      component = <Shop />
-      break
-  }
   return (
     <>
       <Nav />
-      {component}
+      <div className="container">
+        <Routes>
+          <Route path="/" element= {<Home />} />
+          <Route path="/Shop" element= {<Shop />} />
+          <Route path="/Quests" element= {<Quests />} />
+          <Route path="/Check" element= {<Check />} />
+          <Route path="/Communities" element= {<Communities />} />
+        </Routes>
+      </div>
     </>
   )
 }
