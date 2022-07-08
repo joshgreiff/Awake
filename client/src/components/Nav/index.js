@@ -14,6 +14,10 @@ export default function Navbar() {
             <CustomLink to="/Quests">Quests</CustomLink>
             <CustomLink to="/Communities">Communities</CustomLink>
         </ul>
+        <ul>
+            <CustomLink to="/Log">Login</CustomLink>
+            <CustomLink to="/Sign">Sign Up!</CustomLink>
+        </ul>
     </nav>
 
     )
