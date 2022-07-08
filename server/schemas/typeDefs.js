@@ -9,6 +9,7 @@ const typeDefs = gql`
         coins: Int
         level: Int
         exp: Int
+        posts: [Post]
         quests: [Quest]
         milestones: [Milestone]
         dailies: [Daily]
@@ -84,7 +85,7 @@ const typeDefs = gql`
         addMilestone(username: String!, quest: String!, title: String!, description: String): Milestone
         addDaily(username: String!, quest: String!, title: String!, description: String, difficulty: String!): Daily
         addCommunity(username: String!, title: String!, description: String): Community
-        addPost(username: String!, community: String!, title: String, description: String): Post
+        addPost(username: String!, community: String!, title: String, postContent: String!): Post
     }
     type Auth {
         token: ID!
