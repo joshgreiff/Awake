@@ -1,8 +1,21 @@
 import React from 'react'
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
 import Homepage from './components/Homepage';
 import Landing from './components/Landing';
+import Nav from './components/Nav';
+import Home from './components/Homepage';
+import Shop from './components/Shop';
+import Quests from './components/Quests';
+import Check from './components/Check-in';
+import Communities from './components/Communities';
+import Sign from './components/Sign-up';
+import Log from './components/Log-in';
+// import { ReactDOM } from 'react-dom/client';
+import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
+
+
 
 
 const httpLink = createHttpLink({
@@ -14,9 +27,24 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App () {
- 
-    return (< Landing />)
-}   
+
+function App() {
+  return (
+    <>
+      <Nav />
+      <div className="container">
+        <Routes>
+          <Route path="/" element= {<Home />} />
+          <Route path="/Shop" element= {<Shop />} />
+          <Route path="/Quests" element= {<Quests />} />
+          <Route path="/Check" element= {<Check />} />
+          <Route path="/Communities" element= {<Communities />} />
+          <Route path="/Sign" element= {<Sign />} />
+          <Route path="/Log" element= {<Log />} />
+        </Routes>
+      </div>
+    </>
+  )
+}
 
 export default App;

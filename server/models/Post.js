@@ -14,10 +14,9 @@ const postSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    // Unsure if this is the corrcet way to do the 'createdBy' ref
-    createdBy: {
-          type: Schema.Types.ObjectId,
-          ref: 'User'
+    username: {
+      type: String,
+      required: true
     },
     
   },

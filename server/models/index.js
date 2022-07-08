@@ -6,4 +6,4 @@ const User = require('./User')
 const Reward = require('./Reward')
 const Post = require('./Post')
 
-module.exports = { Community, Daily, Milestone, Quest, User, Post }
+module.exports = { Community, Daily, Milestone, Quest, User, Post, Reward }

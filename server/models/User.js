@@ -22,16 +22,26 @@ const userSchema = new Schema(
     },
     coins: {
         type: Number,
-        required: true
+
+        required: false,
+        default: 0
     },
     level: {
         type: Number,
-        required: true
+        required: false,
+        default: 1
     },
     exp: {
         type: Number,
-        required: true
+        required: false,
+        default: 0
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
     quests: [
       {
         type: Schema.Types.ObjectId,
@@ -41,13 +51,13 @@ const userSchema = new Schema(
     milestones: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'Quest'
+          ref: 'Milestone'
         }
     ],
     dailies: [
         {
           type: Schema.Types.ObjectId,
-          ref: 'Quest'
+          ref: 'Daily'
         }
     ],
     friends: [
@@ -55,7 +65,13 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User'
       }
-    ]
+    ],
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post'
+      }
+    ],
   },
   {
     toJSON: {
@@ -83,6 +99,19 @@ userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
-const User = model('User', userSchema);
 
-module.exports = User;
+userSchema.virtual('questCount').get(function() {
+  return this.quests.length;
+})
+
+
+
+userSchema.virtual('toNextLevel').get(function() {
+  const level = this.level
+  const toNext = Math.round( 0.04 * (level ** 3) + 0.8 * (level ** 2) + 2 * level)
+  return toNext
+})
+
+const User = model('User', userSchema)
+
+module.exports = User
