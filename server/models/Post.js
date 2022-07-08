@@ -21,7 +21,15 @@ const postSchema = new Schema(
     username: {
       type: String,
       required: true
+<<<<<<< HEAD
     }    
+=======
+    },
+    community: {
+      type: String,
+      required: false
+    }
+>>>>>>> 0bb60a28e8f5be3f398830cc0a1b9923b5b2208c
   },
   {
     toJSON: {

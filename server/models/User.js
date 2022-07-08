@@ -64,7 +64,11 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User'
       }
+<<<<<<< HEAD
     ]  
+=======
+    ]
+>>>>>>> 0bb60a28e8f5be3f398830cc0a1b9923b5b2208c
   },
   {
     toJSON: {
