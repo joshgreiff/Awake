@@ -10,6 +10,7 @@ const resolvers = {
         users: async () => {
             return User.find()
                 .select('-__v -password')
+                .populate('posts')
                 .populate('coins')
                 .populate('level')
                 .populate('exp')
@@ -115,7 +116,7 @@ const resolvers = {
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { posts: post._id } },
+                    { $push: post },
                     { new: true }
                 )
 
