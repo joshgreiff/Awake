@@ -3,6 +3,10 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
+    postTitle: {
+      type: String,
+      required: true
+    },
     postContent: {
       type: String,
       required: true,
