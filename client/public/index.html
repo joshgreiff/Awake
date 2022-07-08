@@ -25,6 +25,82 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./public/style.css">
+
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <script type="tailwind-config">
+        {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3aadec',
+                        'primary-purple': '#7c2ae8',
+                        'primary-yellow': '#dffc01',
+                        'secondary-blue': '#00c2cb',
+                        'secondary-turqoise': '#2ed1a2',
+                        'secondary-limegreen': '#2ed1a2',
+                        'bookmark-white': '#f7f7f7',
+                        'dark': '#111827'
+                    },
+                    fontSize: {
+                        mammoth: '8rem'
+                    },
+                    container: {
+                        center: true,
+                        padding: '1rem',
+                        screens: {
+                            lg: "1124px",
+                            xl: "1124px",
+                            "2xl": "1124px",
+                        }
+                    }
+                }
+            }
+        }
+        </script>
+    <style>
+        @font-face {
+        font-family: mokoto-glitch;
+        src: url('./public/fonts/Mokoto\ Glitch.ttf');
+        }
+        @font-face {
+        font-family: mokoto-glitch-mark;
+        src: url('./public/fonts/Mokoto\ Glitch\ Mark.ttf');
+        }
+        @font-face {
+        font-family: mokoto-glitch-mark-2;
+        src: url('./public/fonts/Mokoto\ Glitch\ Mark\ 2.ttf');
+        }
+        @font-face {
+        font-family: mokoto-glitch-mark-outline;
+        src: url('./public/fonts/Mokto\ Glitch\ Mark\ outline.ttf');
+        }
+        @font-face {
+        font-family: poppins-regular;
+        src: url('./public/fonts/Poppins-Regular.ttf');
+        }
+       
+        #title {
+            font-family: mokoto-glitch-mark-2 
+        }
+
+        h2, p, button, section{
+            font-family: poppins
+        }
+    </style>
+    <style type="postcss">
+        .btn{
+            @apply shadow-md py-3 px-6 rounded-md transition duration-500;
+        }
+        .btn-purple{
+            @apply bg-primary-purple text-white hover:shadow-inner hover:bg-bookmark-white hover:text-black;
+        }
+        .btn-white{
+            @apply bg-bookmark-white;
+        }
+    </style>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +115,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="./public/index.js"></script>
   </body>
 </html>

@@ -1,8 +1,14 @@
 import React from 'react'
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+<<<<<<< HEAD
 import { setContext } from '@apollo/client/link/context'
 
+=======
+
+import Homepage from './components/Homepage';
+import Landing from './components/Landing';
+>>>>>>> ac63e070467c33175c48245b83ac80a282550f00
 import Nav from './components/Nav';
 import Home from './components/Homepage';
 import Shop from './components/Shop';
@@ -13,6 +19,7 @@ import Sign from './components/Sign-up';
 import Log from './components/Log-in';
 // import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
+
 
 
 
@@ -34,6 +41,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
   return (
