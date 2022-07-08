@@ -30,7 +30,7 @@ const dailySchema = new Schema(
         maxlength: 15
     },
     timesCompleted: {
-        type: String
+        type: Number
     }
     
   },
