@@ -7,6 +7,8 @@ import Shop from './components/Shop';
 import Quests from './components/Quests';
 import Check from './components/Check-in';
 import Communities from './components/Communities';
+import Sign from './components/Sign-up';
+import Log from './components/Log-in';
 // import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
@@ -32,6 +34,8 @@ function App() {
           <Route path="/Quests" element= {<Quests />} />
           <Route path="/Check" element= {<Check />} />
           <Route path="/Communities" element= {<Communities />} />
+          <Route path="/Sign" element= {<Sign />} />
+          <Route path="/Log" element= {<Log />} />
         </Routes>
       </div>
     </>
