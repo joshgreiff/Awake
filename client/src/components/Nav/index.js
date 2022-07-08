@@ -1,8 +1,12 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import logo from '../../assets/logo/awake.svg';
-
+import Auth from '../../utils/auth'
 
 export default function Navbar() {
+    const logout = event => {
+        event.preventDefault()
+        Auth.logout()
+    }
     return (
     <nav className="nav">
         <Link to="/">
@@ -15,8 +19,20 @@ export default function Navbar() {
             <CustomLink to="/Communities">Communities</CustomLink>
         </ul>
         <ul>
-            <CustomLink to="/Log">Login</CustomLink>
-            <CustomLink to="/Sign">Sign Up!</CustomLink>
+            
+            {Auth.loggedIn() ? (
+            <>
+              <Link to ="/profile">Me</Link>
+              <a href="/" onClick={logout}>
+                Logout
+              </a>
+            </>
+          ) : (
+            <>
+                <Link to="/Login">Login</Link>
+                <Link to="/Signup">Sign Up!</Link>
+            </>
+          )}
         </ul>
     </nav>
 
