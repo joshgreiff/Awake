@@ -1,14 +1,11 @@
 import React from 'react'
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-<<<<<<< HEAD
-import { setContext } from '@apollo/client/link/context'
 
-=======
 
 import Homepage from './components/Homepage';
 import Landing from './components/Landing';
->>>>>>> ac63e070467c33175c48245b83ac80a282550f00
+
 import Nav from './components/Nav';
 import Home from './components/Homepage';
 import Shop from './components/Shop';
