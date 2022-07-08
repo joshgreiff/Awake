@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context'
 
 
 import Homepage from './components/Homepage';
@@ -14,6 +15,7 @@ import Check from './components/Check-in';
 import Communities from './components/Communities';
 import Sign from './components/Sign-up';
 import Log from './components/Log-in';
+import Profile from './components/Profile'
 // import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
@@ -53,8 +55,9 @@ function App() {
             <Route path="/Quests" element= {<Quests />} />
             <Route path="/Check" element= {<Check />} />
             <Route path="/Communities" element= {<Communities />} />
-            <Route path="/Sign" element= {<Sign />} />
-            <Route path="/Log" element= {<Log />} />
+            <Route path="/Signup" element= {<Sign />} />
+            <Route path="/Login" element= {<Log />} />
+            <Route path="/profile" element = {<Profile />} />
           </Routes>
         </div>
       </ApolloProvider>

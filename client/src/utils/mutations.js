@@ -8,3 +8,11 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
   }
 `
 
+export const LOGIN_USER = gql`
+mutation Mutation($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+  }
+}
+`
+
