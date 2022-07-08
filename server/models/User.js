@@ -22,6 +22,7 @@ const userSchema = new Schema(
     },
     coins: {
         type: Number,
+
         required: false,
         default: 0
     },
@@ -97,6 +98,7 @@ userSchema.methods.isCorrectPassword = async function(password) {
 userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
+
 
 userSchema.virtual('questCount').get(function() {
   return this.quests.length;
