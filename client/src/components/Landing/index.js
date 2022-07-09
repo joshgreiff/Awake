@@ -1,4 +1,9 @@
+import { executeSync } from 'graphql';
 import react from 'react';
+import svg from '../../components/Landing/public/img/third-eye.svg'
+import scale from '../../components/Landing/public/img/scale-head.svg'
+import gear from '../../components/Landing/public/img/8.svg'
+import plant from '../../components/Landing/public/img/plant-head.svg'
 
 export default function Landing() {
     return (
@@ -37,7 +42,7 @@ export default function Landing() {
             </div>
             
             <div className="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
-                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"></img><a href="https://github.com/joshgreiff/awake-landing-page/blob/main/public/img/third-eye.svg"></a>
+                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"></img><img src={svg} alt=""></img>
             </div>
             
             
@@ -61,7 +66,7 @@ export default function Landing() {
             <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
                
                 <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0-">
-                    <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src="./public/img/scale-head.svg" alt=""></img>
+                    <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src={scale} alt=""></img>
                 </div>
                 
                 <div className="flex flex-1 flex-col items-center lg:items-start z-10">
@@ -76,7 +81,7 @@ export default function Landing() {
         <div className="container flex flex-col lg:flex-row-reverse items-center justify-center gap-x-24">
             
             <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0-">
-                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src="./public/img/8.svg" alt=""></img>
+                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src={gear} alt=""></img>
             </div> 
             
             <div className="flex flex-1 flex-col items-center lg:items-start">
@@ -89,7 +94,7 @@ export default function Landing() {
             <div className="container flex flex-col lg:flex-row items-center justify-center gap-x-24">
                 
                 <div className="flex flex-1 justify-center z-10 mb-10 lg:mb-0-">
-                    <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src="./public/img/plant-head.svg" alt=""></img>
+                    <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src={plant} alt=""></img>
                 </div>
                 
                 <div className="flex flex-1 flex-col items-center lg:items-start">
