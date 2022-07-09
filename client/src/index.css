@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 }
 
 body {
@@ -21,6 +23,10 @@ body {
   padding: 0 1rem;
 }
 
+.Awake {
+  background-color: #D3D3D3;
+}
+
 .site-title {
   font-size: 2rem;
 }
@@ -31,6 +37,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1rem;
+  background-color: #D3D3D3;
 }
   
 .nav a {
@@ -40,6 +47,7 @@ body {
   display: flex;
   align-items: center;
   padding: .25rem;
+  background-color: #D3D3D3;
 }
 
 .nav li.active {
@@ -53,4 +61,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.testText {
+  color: white;
 }
