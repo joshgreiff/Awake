@@ -22,10 +22,10 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    community: {
-      type: String,
-      required: false
-    }
+    // community: {
+    //   type: String,
+    //   required: false
+    // }
   },
   {
     toJSON: {
