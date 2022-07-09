@@ -10,7 +10,7 @@ export default function Navbar() {
     return (
     <nav className="nav">
         <Link to="/">
-            <img src={logo} alt="React logo"></img> 
+            <img className="Awake" src={logo} alt="React logo"></img> 
         </Link>
         <ul>
             <CustomLink to="/Shop">Shop</CustomLink>
