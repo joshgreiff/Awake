@@ -13,7 +13,7 @@ const resolvers = {
                 .populate('posts')
                 .populate('coins')
                 .populate('level')
-                .populate('exp')
+                .populate('exp')                              
         },
         // find one user by username
         user: async (parent, { username }) => {
