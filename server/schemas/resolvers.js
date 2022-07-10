@@ -48,26 +48,33 @@ const resolvers = {
             return Quest.find({ username })
                 .populate('questTitle')
                 .populate('questDescription')
-                .populate('dailes')
+                .populate('dailies')
+                .populate('milestones')
                 .populate('createdAt')
+                .populate('username')
         },
         quest: async (parent, { _id }) => {
             return Quest.findOne({ _id: _id })
                 .populate('questTitle')
                 .populate('questDescription')
-                .populate('dailes')
+                .populate('dailies')
+                .populate('milestones')
                 .populate('createdAt')
+                .populate('username')
         },
         // get all of a quest's milestones
         milestones: async (parent, { _id }) => {
             return Quest.findOne({ _id })
                 .populate('milestones')
+                .populate('milestoneTitle')
+                .populate('milestoneDesription')
+                .populate('username')
         },
         milestone: async (parent, { _id }) => {
-            return Milestone.findOne({ _id: _id})
+            return Milestone.findOne({ _id})
                 .populate('milestoneTitle')
-                .populate('milestoneDescription')
-                .populate('createdAt')
+                .populate('milestoneDesription')
+                .populate('username')
         },
         communities: async (parent, args) => {
             return Community.find()
@@ -122,7 +129,7 @@ const resolvers = {
         addPost: async (parent, args, context) => {
             if (context.user) {
                 console.log(context.user.username)
-                const post = await Post.create({ ...args, userid: context.user._id });
+                const post = await Post.create({ ...args, username: context.user.username });
                 console.log(post)
 
                 await User.findByIdAndUpdate(
@@ -135,6 +142,56 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You must be logged in to post');
+        },
+        addQuest: async (parent, args, context) => {
+            if(context.user) {
+                const quest = await Quest.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { quests: quest._id } },
+                    { new: true }
+                )
+
+                return quest
+            }
+
+            throw new AuthenticationError('You must be logged in to create a quest.')
+        },
+        addMilestone: async (parent, { questId, milestoneTitle, milestoneDescription }, context ) => {
+            console.log(questId)
+            if(context.user) {
+                const milestone = await Milestone.create({ milestoneTitle, milestoneDescription, username: context.user.username })
+                
+                
+                await Quest.findOneAndUpdate(
+                    { _id: questId },
+                    { $push: { milestones: milestone._id }},
+                    { new: true }
+                )
+
+                return milestone
+            }
+
+            throw new AuthenticationError('You must be logged in to add a milestone.')
+        },
+        addDaily: async (parent, { questId, dailyTitle, dailyDescription }, context) => {
+            console.log(questId)
+            console.log(questId)
+            if(context.user) {
+                const daily = await Daily.create({ dailyTitle, dailyDescription, username: context.user.username })
+                
+                
+                await Quest.findOneAndUpdate(
+                    { _id: questId },
+                    { $push: { dailies: daily._id }},
+                    { new: true }
+                )
+
+                return daily
+            }
+
+            throw new AuthenticationError('You must be logged in to add a daily quest.')
         }
     }
 };

@@ -69,7 +69,7 @@ const typeDefs = gql`
         user(username: String!): User
         quests(username: String!): [Quest]
         quest(_id: ID!): Quest
-        milestones(quest: String!): [Milestone]
+        milestones(questId: ID): [Milestone]
         milestone(_id: ID!): Milestone
         dailies(quest: String!): [Daily]
         daily(_id: ID!): Daily
@@ -82,9 +82,9 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!):Auth
-        addQuest(username: String!, title: String!, description: String): Quest
-        addMilestone(username: String!, quest: String!, title: String!, description: String): Milestone
-        addDaily(username: String!, quest: String!, title: String!, description: String, difficulty: String!): Daily
+        addQuest(username: String, questTitle: String!, questDescription: String): Quest
+        addMilestone(username: String, questId: ID!, milestoneTitle: String!, milestoneDescription: String): Milestone
+        addDaily(username: String, questId: ID!, dailyTitle: String!, dailyDescription: String, difficulty: String!): Daily
         addCommunity(username: String!, title: String!, description: String): Community
         addPost(postTitle: String!, postContent: String!, username: String): Post
     }
