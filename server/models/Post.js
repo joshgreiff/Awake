@@ -18,10 +18,14 @@ const postSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    username: {
-      type: String,
-      required: true
-    }
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    // community: {
+    //   type: String,
+    //   required: false
+    // }
   },
   {
     toJSON: {
