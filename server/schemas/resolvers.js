@@ -27,13 +27,13 @@ const resolvers = {
                 .populate('friends')
         },
         // find all posts
-        posts: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Post.find(params).sort({ createdAt: -1 })
+        posts: async (parent, { user }) => {
+            // const params = username ? { username } : {};
+            return Post.find({ user }).sort({ createdAt: -1 })
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('username')
+                .populate('user')
         },
         // find one post by id
         post: async (parent, { _id }) => {
@@ -41,7 +41,7 @@ const resolvers = {
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('username')
+                .populate('user')
         },
         // get all of a user's quests
         quests: async (parent, { username }) => {
@@ -121,11 +121,13 @@ const resolvers = {
         },
         addPost: async (parent, args, context) => {
             if (context.user) {
-                const post = await Post.create({ ...args, username: context.user.username });
+                console.log(context.user.username)
+                const post = await Post.create({ ...args, userid: context.user._id });
+                console.log(post)
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { _id: post._id } },
+                    { $push: { posts: post._id } },
                     { new: true }
                 )
 
