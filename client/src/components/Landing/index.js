@@ -19,11 +19,17 @@ export default function Landing() {
                 <div onClick={(e) => {e.preventDefault(); window.location.replace('/#features');}}>
                     <span className="cursor-pointer">Features</span>
                 </div>
+                
                 <li className="cursor-pointer">About</li>
+                
                 <div onClick={(e) => {e.preventDefault(); window.location.replace('/#contact');}}>
                     <li className="cursor-pointer">Contact</li>
                 </div>
-                <button type="button" className="btn btn-purple uppercase font-semibold">Launch App</button>
+                
+                <div onClick={() => window.open('/Homepage')}>
+                    <button type="button" className="btn btn-purple uppercase font-semibold">Launch App</button>
+                </div>
+
             </ul>
             <div className="flex sm:hidden flex-1 justify-end">
                 <i className="text-2xl fa-solid fa-bars"></i>
