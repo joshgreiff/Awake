@@ -26,6 +26,7 @@ const milestoneSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
+
     username: {
       type: String,
       required: true
