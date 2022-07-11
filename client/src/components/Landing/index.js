@@ -135,7 +135,7 @@ export default function Landing() {
                     <span className="flex-1">Can anyone use Awake?</span>
                     <i className="text-primary-purple fa-solid fa-chevron-down"></i>
                 </div>
-                <button type="button" className="flex self-center btn btn-purple uppercase mt-12">More Info</button>
+                <button type="button" className="flex self-center font-semibold btn btn-purple uppercase mt-12">More Info</button>
 
             </div> 
         </div>
@@ -149,7 +149,7 @@ export default function Landing() {
                 <h2 className="text-3xl text-center">Enter your email to receive updates</h2>
                 <div className="flex flex-col sm:flex-row gap-6 mt-8">
                     <input type="text" placeholder="Enter your email address" className="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"></input>
-                    <button type="button" className="btn bg-secondary-turqoise hover:bg-white hover:text-black uppercase">Contact Us</button>
+                    <button type="button" className="btn bg-secondary-turqoise font-semibold hover:bg-white hover:text-black uppercase">Contact Us</button>
                 </div>
             </div>
         </div>
