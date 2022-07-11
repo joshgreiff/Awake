@@ -8,5 +8,8 @@
       "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
       "install": "cd server && npm i && cd ../client && npm i",
       "seed": "cd server && npm run seed"
+   },
+   "dependencies": {
+      "react-router-dom": "^6.3.0"
    }
 }

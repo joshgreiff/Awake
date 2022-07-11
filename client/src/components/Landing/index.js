@@ -1,5 +1,4 @@
-import { executeSync } from 'graphql';
-import react from 'react';
+import React from 'react';
 import svg from '../../components/Landing/public/img/third-eye.svg'
 import scale from '../../components/Landing/public/img/scale-head.svg'
 import gear from '../../components/Landing/public/img/8.svg'
@@ -17,10 +16,20 @@ export default function Landing() {
                 <h1 id="title" className="text-5xl cursor-pointer">AWAKE</h1>
             </div>
             <ul className="hidden sm:flex flex-1 justify-end items-center gap-12 text-primary-blue uppercase text-m">
-                <li className="cursor-pointer">Features</li>
+                <div onClick={(e) => {e.preventDefault(); window.location.replace('/#features');}}>
+                    <span className="cursor-pointer">Features</span>
+                </div>
+                
                 <li className="cursor-pointer">About</li>
-                <li className="cursor-pointer">Contact</li>
-                <button type="button" className="btn btn-purple uppercase">Login</button>
+                
+                <div onClick={(e) => {e.preventDefault(); window.location.replace('/#contact');}}>
+                    <li className="cursor-pointer">Contact</li>
+                </div>
+                
+                <div onClick={() => window.open('/Homepage')}>
+                    <button type="button" className="btn btn-purple uppercase font-semibold">Launch App</button>
+                </div>
+
             </ul>
             <div className="flex sm:hidden flex-1 justify-end">
                 <i className="text-2xl fa-solid fa-bars"></i>
@@ -36,19 +45,18 @@ export default function Landing() {
                 <h2 className="text-3xl md:text:4 lg:text-5xl text-center lg:text-left mb-6 text-bookmark-white">Create Your Dream Reality</h2>
                 <p className="text-lg text-center lg:text-left mb-6 text-bookmark-white">Imagine a world where the only boundaries that exist are those which you create.</p>
                 <div className="flex justify-center flex-wrap gap-6">
-                    <button type="button" className="btn btn-purple hover:shadow-inner hover:bg-white hover:text-black">Learn More</button>
-                    <button type="button" className="btn btn-white hover:shadow-inner hover:bg-primary-purple hover:text-white">Join The Community</button>
+                    <div onClick={() => window.open("https://discord.gg/3THBrFEq")}>
+                        <button type="button" className="btn btn-white font-semibold hover:shadow-inner hover:bg-primary-purple hover:text-white">Join The Community Discord</button> 
+                    </div>
                 </div>
             </div>
             
             <div className="flex justify-center flex-1 mb-10 md:mb-16 lg:mb-0 z-10">
-                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"></img><img src={svg} alt=""></img>
+                <img className="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"></img><img src={svg} alt="head"></img> 
             </div>
             
             
-            <div className="hidden lg:block overflow-hidden bg-primary-yellow rounded-l-full absolute h-80 w-2/4 top-40 right-0 lg:-bottom-28 lg:-right-26">
-
-            </div>
+            <div className="hidden lg:block overflow-hidden bg-primary-yellow rounded-l-full absolute h-80 w-2/4 top-40 right-0 lg:-bottom-28 lg:-right-26"></div>
         </div>
     </section>
 
@@ -56,7 +64,7 @@ export default function Landing() {
     <section className="bg-darkpy-20 mt-20 lg:mt-60">
         
         <div className="sm:w-3/4 lg:w-5/12 mx-auto px-2">
-            <h2 className="text-4xl text-center text-primary-blue font-bold">Features</h2>
+            <h2 id="features" className="text-4xl text-center text-primary-blue font-bold">Features</h2>
             <p className="text-center text-gray-600 mt-4 font-bold">
                 
             </p>
@@ -133,7 +141,7 @@ export default function Landing() {
                     <span className="flex-1">Can anyone use Awake?</span>
                     <i className="text-primary-purple fa-solid fa-chevron-down"></i>
                 </div>
-                <button type="button" className="flex self-center btn btn-purple uppercase mt-12">More Info</button>
+                <button type="button" className="flex self-center font-semibold btn btn-purple uppercase mt-12">More Info</button>
 
             </div> 
         </div>
@@ -143,11 +151,11 @@ export default function Landing() {
     <section className="bg-primary-purple text-white py-20">
         <div className="container">
             <div className="sm:w-3/4 lg:w-2/4 mx-auto">
-                <p className="font-light uppercase text-center mb-8">Stay up to date</p>
+                <p id="contact" className="font-light uppercase text-center mb-8">Stay up to date</p>
                 <h2 className="text-3xl text-center">Enter your email to receive updates</h2>
                 <div className="flex flex-col sm:flex-row gap-6 mt-8">
                     <input type="text" placeholder="Enter your email address" className="focus:outline-none flex-1 px-2 py-3 rounded-md text-black"></input>
-                    <button type="button" className="btn bg-secondary-turqoise hover:bg-white hover:text-black uppercase">Contact Us</button>
+                    <button type="button" className="btn bg-secondary-turqoise font-semibold hover:bg-white hover:text-black uppercase">Contact Us</button>
                 </div>
             </div>
         </div>
@@ -159,9 +167,13 @@ export default function Landing() {
             <div className="flex flex-1 flex-wrap items-center justify-center md:justify-start gap-12">
                 <h1 id="title" className="text-bookmark-white text-5xl cursor-pointer">AWAKE</h1>
                 <ul className="flex text-white uppercase gap-12 text-xs">
-                    <li className="cursor-pointer">Features</li>
+                    <div onClick={(e) => {e.preventDefault(); window.location.replace('/#features');}}>
+                        <li className="cursor-pointer">Features</li>
+                    </div>
                     <li className="cursor-pointer">About</li>
-                    <li className="cursor-pointer">Contact</li>
+                    <div onClick={(e) => {e.preventDefault(); window.location.replace('/#contact');}}>
+                        <li className="cursor-pointer">Contact</li>
+                    </div>
                 </ul>
             </div>
             <div className="">
