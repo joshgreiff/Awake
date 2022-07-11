@@ -3,6 +3,7 @@ import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import Homepage from './components/Homepage';
 import Landing from './components/Landing';
+import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
 
 const httpLink = createHttpLink({
@@ -16,7 +17,12 @@ const client = new ApolloClient({
 
 function App () {
  
-    return (< Landing />)
+    return (
+        <ApolloProvider client={client}>
+    < Landing />
+    </ApolloProvider>
+    
+    )
 }   
 
 export default App;
