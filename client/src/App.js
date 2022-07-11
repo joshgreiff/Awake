@@ -64,6 +64,7 @@ function App() {
             <Route path="/Signup" element= {<Sign />} />
             <Route path="/Login" element= {<Log />} />
             <Route path="/profile" element = {<Profile />} />
+            <Route path="/landing" element = {<Landing />} />
           </Routes>
         </div>
       </ApolloProvider>

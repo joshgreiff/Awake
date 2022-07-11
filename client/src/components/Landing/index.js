@@ -1,5 +1,5 @@
 import { executeSync } from 'graphql';
-import react from 'react';
+import React from 'react';
 import svg from '../../components/Landing/public/img/third-eye.svg'
 import scale from '../../components/Landing/public/img/scale-head.svg'
 import gear from '../../components/Landing/public/img/8.svg'
