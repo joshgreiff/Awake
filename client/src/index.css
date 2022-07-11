@@ -2,6 +2,7 @@
   box-sizing: border-box;
   --tw-bg-opacity: 1;
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+  margin: 0;
 }
 
 body {
@@ -61,8 +62,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.testText {
-  color: white;
 }
