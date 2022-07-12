@@ -55,7 +55,6 @@ const resolvers = {
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('user')
         },
         // find one post by id
         post: async (parent, { _id }) => {
@@ -63,7 +62,6 @@ const resolvers = {
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('user')
         },
         // get all of a user's quests
         quests: async (parent, { username }) => {
@@ -148,9 +146,7 @@ const resolvers = {
         },
         addPost: async (parent, args, context) => {
             if (context.user) {
-                console.log(context.user.username)
                 const post = await Post.create({ ...args, username: context.user.username });
-                console.log(post)
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },

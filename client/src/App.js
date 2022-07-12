@@ -10,7 +10,7 @@ import Home from './components/Homepage';
 import Shop from './components/Shop';
 import Quests from './components/Quests';
 import Check from './components/Check-in';
-import Communities from './components/Communities';
+import Post from './pages/Posts';
 import Sign from './components/Sign-up';
 import Log from './components/Log-in';
 import Profile from './components/Profile'
@@ -54,7 +54,7 @@ function App() {
               <Route path=":username" element= {<Quests />} />
             </Route>
             <Route path="/Check" element= {<Check />} />
-            <Route path="/Communities" element= {<Communities />} />
+            <Route path="/Posts" element= {<Post />} />
             <Route path="/Signup" element= {<Sign />} />
             <Route path="/Login" element= {<Log />} />
             <Route path="/profile" element = {<Profile />} />
