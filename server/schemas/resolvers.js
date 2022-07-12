@@ -28,14 +28,10 @@ const resolvers = {
                 .populate('posts')
                 .populate('coins')
                 .populate('level')
-<<<<<<< HEAD
-                .populate('exp')                              
-=======
                 .populate('exp')
                 .populate('quests')
                 .populate('milestones')
                 .populate('dailies')
->>>>>>> 5132fe82460bb3f3af0f30035e823796e140377f
         },
         // find one user by username
         user: async (parent, { username }) => {
