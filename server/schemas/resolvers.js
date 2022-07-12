@@ -7,6 +7,23 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         // find all users
+        me: async ( parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({_id: context.user._id})
+                    .select('-__v -password')
+                    .populate('posts')
+                    .populate('coins')
+                    .populate('level')
+                    .populate('exp')
+                    .populate('quests')
+                    .populate('milestones')
+                    .populate('dailies')
+
+                return userData;
+            }
+
+            throw new AuthenticationError('Not logged in.')
+        },
         users: async () => {
             return User.find()
                 .select('-__v -password')
@@ -14,6 +31,9 @@ const resolvers = {
                 .populate('coins')
                 .populate('level')
                 .populate('exp')
+                .populate('quests')
+                .populate('milestones')
+                .populate('dailies')
         },
         // find one user by username
         user: async (parent, { username }) => {
@@ -23,8 +43,10 @@ const resolvers = {
                 .populate('coins')
                 .populate('level')
                 .populate('exp')
-                .populate('quests')
                 .populate('friends')
+                .populate('quests')
+                .populate('milestones')
+                .populate('dailies')
         },
         // find all posts
         posts: async (parent, { user }) => {
@@ -67,13 +89,13 @@ const resolvers = {
             return Quest.findOne({ _id })
                 .populate('milestones')
                 .populate('milestoneTitle')
-                .populate('milestoneDesription')
+                .populate('milestoneDescription')
                 .populate('username')
         },
         milestone: async (parent, { _id }) => {
             return Milestone.findOne({ _id})
                 .populate('milestoneTitle')
-                .populate('milestoneDesription')
+                .populate('milestoneDescription')
                 .populate('username')
         },
         communities: async (parent, args) => {
@@ -159,7 +181,6 @@ const resolvers = {
             throw new AuthenticationError('You must be logged in to create a quest.')
         },
         addMilestone: async (parent, { questId, milestoneTitle, milestoneDescription }, context ) => {
-            console.log(questId)
             if(context.user) {
                 const milestone = await Milestone.create({ milestoneTitle, milestoneDescription, username: context.user.username })
                 
@@ -170,14 +191,18 @@ const resolvers = {
                     { new: true }
                 )
 
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { milestones: milestone._id} },
+                    { new: true}
+                )
+
                 return milestone
             }
 
             throw new AuthenticationError('You must be logged in to add a milestone.')
         },
         addDaily: async (parent, { questId, dailyTitle, dailyDescription }, context) => {
-            console.log(questId)
-            console.log(questId)
             if(context.user) {
                 const daily = await Daily.create({ dailyTitle, dailyDescription, username: context.user.username })
                 
@@ -186,6 +211,12 @@ const resolvers = {
                     { _id: questId },
                     { $push: { dailies: daily._id }},
                     { new: true }
+                )
+
+                await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { dailies: daily._id} },
+                    { new: true}
                 )
 
                 return daily

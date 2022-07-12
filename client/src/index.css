@@ -3,6 +3,19 @@
   --tw-bg-opacity: 1;
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
   margin: 0;
+  padding: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-screen {
+  height: 81vh;
+}
+
+.container {
+  padding: 0;
 }
 
 body {
@@ -12,6 +25,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 .nav {
@@ -62,4 +76,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.test {
+  padding: 603px;
+  width: 100%;
+}
+
+.bg-image {
+  padding: 0;
 }

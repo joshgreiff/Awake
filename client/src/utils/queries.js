@@ -9,3 +9,14 @@ export const QUERY_USERS=gql`
         }
     }
 `
+
+// export const QUERY_QUESTS=gql`
+//     query Quests($username: String!) {
+//         quests(username: $username) {
+//         _id
+//         questTitle
+//         questDescription
+//         createdAt
+//         }
+//     }
+// `

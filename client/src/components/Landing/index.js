@@ -1,3 +1,4 @@
+
 import React from 'react';
 import svg from '../../components/Landing/public/img/third-eye.svg'
 import scale from '../../components/Landing/public/img/scale-head.svg'
