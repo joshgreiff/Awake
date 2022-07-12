@@ -1,7 +1,7 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import logo from '../../assets/logo/awake.svg';
 import Auth from '../../utils/auth'
-
+import coin from '../../assets/coin/A -2.svg'
 export default function Navbar() {
     const logout = event => {
         event.preventDefault()
@@ -26,6 +26,11 @@ export default function Navbar() {
               <a href="/" onClick={logout}>
                 Logout
               </a>
+              <div className='flex align-middle'>
+                <img src={coin} width={30} className='bg-nav-grey'/>
+                <div className='pt-3 pl-1 text-black bg-nav-grey'>0</div>
+              </div>
+                
             </>
           ) : (
             <>
