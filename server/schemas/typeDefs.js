@@ -21,7 +21,7 @@ const typeDefs = gql`
         questTitle: String!
         questDescription: String!
         createdAt: String
-        username: User
+        username: String
         milestones: [Milestone]
         dailies: [Daily]
     }
@@ -31,7 +31,7 @@ const typeDefs = gql`
         dailyTitle: String!
         dailyDescription: String
         createdAt: String
-        username: User
+        username: String
         difficulty: String
         timeCompleted: Int
     }
@@ -41,7 +41,7 @@ const typeDefs = gql`
         milestoneTitle: String!
         milestoneDescription: String
         createdAt: String
-        username: User
+        username: String
     }
 
     type Post {
@@ -49,7 +49,7 @@ const typeDefs = gql`
         postTitle: String!
         postContent: String!
         createdAt: String
-        username: User
+        username: String
     }
 
     type Community {
@@ -83,8 +83,8 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!):Auth
         addQuest(username: String, questTitle: String!, questDescription: String): Quest
-        addMilestone(username: String, questId: ID!, milestoneTitle: String!, milestoneDescription: String): Milestone
-        addDaily(username: String, questId: ID!, dailyTitle: String!, dailyDescription: String, difficulty: String!): Daily
+        addMilestone(username: String, questId: ID!, milestoneTitle: String!, milestoneDescription: String): Quest
+        addDaily(username: String, questId: ID!, dailyTitle: String!, dailyDescription: String, difficulty: String!): Quest
         addCommunity(username: String!, title: String!, description: String): Community
         addPost(postTitle: String!, postContent: String!, username: String): Post
     }
