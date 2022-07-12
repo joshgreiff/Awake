@@ -46,7 +46,7 @@ const typeDefs = gql`
         postTitle: String!
         postContent: String!
         createdAt: String
-        username: String!
+        username: String
     }
 
     type Community {
