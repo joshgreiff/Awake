@@ -3,10 +3,6 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
-    postTitle: {
-      type: String,
-      required: true
-    },
     postContent: {
       type: String,
       required: true,
@@ -18,14 +14,12 @@ const postSchema = new Schema(
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
     },
-    user: {
-      type: String,
-      required: true
+    // Unsure if this is the corrcet way to do the 'createdBy' ref
+    createdBy: {
+          type: Schema.Types.ObjectId,
+          ref: 'User'
     },
-    // community: {
-    //   type: String,
-    //   required: false
-    // }
+    
   },
   {
     toJSON: {

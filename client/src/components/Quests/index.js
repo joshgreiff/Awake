@@ -7,12 +7,12 @@ export default function Quests() {
     const [param, setParam] = useState()
 
     const handleChange = (e) => {
-        setParam(e.target.value);        
+        setParam(e.target.value);
     }
 
     const handleSubmit = (e) => {
         setParam(e.target.value);
-        
+
         window.location.replace(`/Quests/${param}`)
     }
 
@@ -31,8 +31,7 @@ export default function Quests() {
                 <li>{quest.questDescription}</li>
                 <li>{quest.createdAt}</li>
             </ul>
-
-        )        
+        )
     })
 
     if (loading) {

@@ -46,6 +46,6 @@ const milestoneSchema = new Schema(
 
 
 
-const Milestone = model('Milestone', milestoneSchema);
+// const Milestone = model('Milestone', milestoneSchema);
 
-module.exports = Milestone;
+module.exports = milestoneSchema;
