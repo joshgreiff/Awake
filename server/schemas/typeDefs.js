@@ -76,7 +76,6 @@ const typeDefs = gql`
         addQuest(username: String, questTitle: String!, questDescription: String): Quest
         addMilestone(username: String, questId: ID!, milestoneTitle: String!, milestoneDescription: String): Quest
         addDaily(username: String, questId: ID!, dailyTitle: String!, dailyDescription: String, difficulty: String!): Quest
-        addCommunity(username: String!, title: String!, description: String): Community
         addPost(postTitle: String!, postContent: String!, username: String): Post
     }
     type Auth {
