@@ -1,24 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
-    <div className="bg-dark py-20">
+    <div>
         <div className="App">
       </div>
-
-      <body>
-        <h1 className="testText">
-            This is where the active quests will be 
-                <ul>
-                    <li>quest 1</li>
-                    <li>quest 2</li>
-                    <li>quest 3</li>
-                    <li>quest 4</li>
-                    <li>quest 5</li>
-                </ul>
-        </h1>
-        <h1 className="testText">This is where the post feed will be</h1>
-      </body>
+        <body className="w-full h-screen flex items-center justify-center">               
+                <div>
+                  <Link to="/quests">
+                    <button className="relative bg-blue-500 rounded-lg overflow-hidden text-white px-5 py-2.5 group">
+                      <span className="absolute w-0 group-hover:w-full transition-all ease-out duration-300 h-full bg-pink-700 left-0 top-0"></span>
+                      <span className="relative">Create A Quest</span>
+                    </button>
+                  </Link>
+        </div>
+        </body>
     </div>
   )
 }
