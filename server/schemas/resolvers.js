@@ -85,12 +85,9 @@ const resolvers = {
                 .populate('username')
         },
         // get all of a quest's milestones
-        // milestones: async (parent, { _id }) => {
-        //     return Quest.findOne({ _id })
+        // milestones: async (parent, { questId }) => {
+        //     return Quest.findOne({ _id: questId })
         //         .populate('milestones')
-        //         .populate('milestoneTitle')
-        //         .populate('milestoneDescription')
-        //         .populate('username')
         // },
         // milestone: async (parent, { _id }) => {
         //     return Milestone.findOne({ _id})

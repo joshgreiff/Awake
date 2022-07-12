@@ -11,9 +11,6 @@ const typeDefs = gql`
         exp: Int
         posts: [Post]
         quests: [Quest]
-        milestones: [Milestone]
-        dailies: [Daily]
-        friends: [User]
     }
 
     type Quest {
@@ -21,7 +18,7 @@ const typeDefs = gql`
         questTitle: String!
         questDescription: String!
         createdAt: String
-        username: String
+        username: String!
         milestones: [Milestone]
         dailies: [Daily]
     }
@@ -31,7 +28,7 @@ const typeDefs = gql`
         dailyTitle: String!
         dailyDescription: String
         createdAt: String
-        username: String
+        username: String!
         difficulty: String
         timeCompleted: Int
     }
@@ -41,7 +38,7 @@ const typeDefs = gql`
         milestoneTitle: String!
         milestoneDescription: String
         createdAt: String
-        username: String
+        username: String!
     }
 
     type Post {
@@ -49,7 +46,7 @@ const typeDefs = gql`
         postTitle: String!
         postContent: String!
         createdAt: String
-        username: String
+        username: String!
     }
 
     type Community {
@@ -69,12 +66,6 @@ const typeDefs = gql`
         user(username: String!): User
         quests(username: String!): [Quest]
         quest(_id: ID!): Quest
-        milestones(questId: ID): [Milestone]
-        milestone(_id: ID!): Milestone
-        dailies(quest: String!): [Daily]
-        daily(_id: ID!): Daily
-        communities: [Community]
-        community(_id: ID!): Community
         posts(username: String): [Post]
         post(_id: ID!): Post
 

@@ -19,8 +19,8 @@ const postSchema = new Schema(
       get: timestamp => dateFormat(timestamp)
     },
     user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+      type: String,
+      required: true
     },
     // community: {
     //   type: String,
