@@ -8,8 +8,8 @@ import plant from '../../components/Landing/public/img/plant-head.svg'
 export default function Landing() {
     return (
         <>
-        <div className="App">
-        <body className="bg-dark">
+        <div className="App bg-dark">
+        
     
     <header>
         <nav className="container flex items-center py-4 mt-4 sm:mt-12">
@@ -177,7 +177,7 @@ export default function Landing() {
         </div>
     </footer>
     <script src="./public/index.js"></script>
-</body>
+
       </div>
         </>
     )
