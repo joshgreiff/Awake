@@ -21,18 +21,9 @@ import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
 
 
-import Nav from './components/Nav';
-import Home from './components/Homepage';
-import Shop from './components/Shop';
-import Quests from './components/Quests';
-import Check from './components/Check-in';
-import Communities from './components/Communities';
-import Sign from './components/Sign-up';
-import Log from './components/Log-in';
-import Profile from './components/Profile'
-import Hero from './components/Hero';
+
 // import { ReactDOM } from 'react-dom/client';
-import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
+
 
 
 
