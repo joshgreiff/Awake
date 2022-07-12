@@ -4,7 +4,6 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context'
 
 
-import Homepage from './components/Homepage';
 import Landing from './components/Landing';
 
 import Nav from './components/Nav';
@@ -16,7 +15,6 @@ import Communities from './components/Communities';
 import Sign from './components/Sign-up';
 import Log from './components/Log-in';
 import Profile from './components/Profile'
-import Hero from './components/Hero';
 // import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 
@@ -50,9 +48,6 @@ function App() {
       
         <Nav />
         <div className="container">
-          <div className="w-full max-w-[1440px] mx-auto bg-white">
-          <Hero />
-          </div>
           <Routes>
             <Route path="/" element= {<Home />} />
             <Route path="/Shop" element= {<Shop />} />
