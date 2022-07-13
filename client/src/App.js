@@ -56,7 +56,7 @@ function App() {
               <Route path=":username" element= {<Quests />} />
             </Route>
             <Route path="/Check" element= {<Check />} />
-            <Route path="/Posts" element= {<Post />} />
+            <Route path="/Social" element= {<Post />} />
             <Route path="/Signup" element= {<Sign />} />
             <Route path="/Login" element= {<Log />} />
             <Route path="/profile" element = {<Profile />} />

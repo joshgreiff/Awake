@@ -10,12 +10,10 @@ import { QUERY_ME } from '../../utils/queries'
 export default function Navbar() {
     const {loading, data } = useQuery(QUERY_ME)
   
+// console.log(data)
     if(loading){
-      return(
-        <h1>Loading...</h1>
-      )
+      return <h3>Loading</h3>
     }
-
     const logout = event => {
         event.preventDefault()
         Auth.logout()
@@ -26,10 +24,10 @@ export default function Navbar() {
             <img className="Awake" src={logo} alt="React logo"></img> 
         </Link>
         <ul>
-            <CustomLink to="/Shop">Shop</CustomLink>
-            <CustomLink to="/Check">Check-in</CustomLink>
-            <CustomLink to="/Quests">Quests</CustomLink>
+            <CustomLink to="/Dashboard">Dashboard</CustomLink>
+            <CustomLink to="/Social">Social</CustomLink>
             <CustomLink to="/Communities">Communities</CustomLink>
+            <CustomLink to="/Shop">Shop</CustomLink>
         </ul>
         <ul>
             

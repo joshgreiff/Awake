@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function PostList({ posts }) {
     if(!posts.length) {
-        return <h3>No Posts Yet</h3>
+        return <h3 className="text-white">No Posts Yet</h3>
     }
     
     return (
