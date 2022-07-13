@@ -108,7 +108,7 @@ export const QUERY_ME = gql `
                 createdAt
                 username
                 milestones {
-                    id
+                    _id
                     milestoneTitle
                     milestoneDescription
                     createdAt
