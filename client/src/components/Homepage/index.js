@@ -6,7 +6,7 @@ export default function Home() {
     <div>
         <div className="App">
       </div>
-        <body className="w-full h-screen flex items-center justify-center">               
+        <div className="w-full h-screen flex items-center justify-center">               
                 <div>
                   <Link to="/quests">
                     <button className="relative bg-blue-500 rounded-lg overflow-hidden text-white px-5 py-2.5 group">
@@ -15,7 +15,7 @@ export default function Home() {
                     </button>
                   </Link>
         </div>
-        </body>
+        </div>
     </div>
   )
 }

@@ -85,45 +85,46 @@ query Users {
 `
 
 export const QUERY_ME = gql `
-    {
-        me {
-            _id
-            username
-            email
-            coins
-            level
-            exp
-            posts {
-                _id
-                postTitle
-                postContent
-                createdAt
-                username
-            }
-            quests {
-                _id
-                questTitle
-                questDescription
-                createdAt
-                username
-                milestones {
-                    id
-                    milestoneTitle
-                    milestoneDescription
-                    createdAt
-                    username
-                }
-                dailies {
-                    _id
-                    dailyTitle
-                    dailyDescription
-                    createdAt
-                    username
-                    difficulty
-                }
-            }
+query Me {
+    me {
+      _id
+      username
+      email
+      coins
+      level
+      exp
+      posts {
+        _id
+        postTitle
+        postContent
+        createdAt
+        username
+      }
+      quests {
+        _id
+        questTitle
+        questDescription
+        createdAt
+        username
+        milestones {
+          _id
+          milestoneTitle
+          milestoneDescription
+          createdAt
+          username
         }
+        dailies {
+          _id
+          dailyTitle
+          dailyDescription
+          createdAt
+          username
+          difficulty
+          timeCompleted
+        }
+      }
     }
+  }
 `
 
 export const QUERY_POSTS = gql `
