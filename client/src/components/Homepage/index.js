@@ -8,7 +8,7 @@ export default function Home() {
     <div>
         <body>               
             <div className="relative">
-                <div className="test h-screen w-full bg-no-repeat relative"
+                <div className="test h-screen w-full  relative"
                         style={{
                         backgroundSize: "auto",
                         backgroundAttachment: "fixed",
