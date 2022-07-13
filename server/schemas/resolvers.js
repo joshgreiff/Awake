@@ -28,10 +28,6 @@ const resolvers = {
                 .populate('level')
                 .populate('exp')
                 .populate('quests')
-<<<<<<< HEAD
-=======
-                
->>>>>>> a527ad976f1015bad05db3bfe2d291ef1f0d8cc9
         },
         // find one user by username
         user: async (parent, { username }) => {
@@ -43,10 +39,6 @@ const resolvers = {
                 .populate('exp')
                 .populate('friends')
                 .populate('quests')
-<<<<<<< HEAD
-=======
-                
->>>>>>> a527ad976f1015bad05db3bfe2d291ef1f0d8cc9
         },
         // find all posts
         posts: async (parent, { user }) => {
