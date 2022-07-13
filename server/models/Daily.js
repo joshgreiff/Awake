@@ -44,6 +44,6 @@ const dailySchema = new Schema(
 
 
 
-const Daily = model('Daily', dailySchema);
+// const Daily = model('Daily', dailySchema);
 
-module.exports = Daily;
+module.exports = dailySchema;
