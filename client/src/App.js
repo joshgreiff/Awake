@@ -14,7 +14,7 @@ import Post from './pages/Posts';
 import Sign from './components/Sign-up';
 import Log from './components/Log-in';
 import Profile from './components/Profile'
-import Hero from './components/Hero';
+// import Hero from './components/Hero';
 import Dashboard from './pages/Dashboard'
 import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
@@ -61,7 +61,7 @@ function App() {
             <Route path="/Login" element= {<Log />} />
             <Route path="/profile" element = {<Profile />} />
             <Route path='/dashboard' element={<Dashboard />} />
-            <Route path="/landing" element = {<Landing />} />
+            {/* <Route path="/landing" element = {<Landing />} /> */}
           </Routes>
         </div>
       </ApolloProvider>

@@ -10,7 +10,10 @@ import { QUERY_ME } from '../../utils/queries'
 export default function Navbar() {
     const { loading, error, data } = useQuery(QUERY_ME)
   
-console.log(data)
+// console.log(data)
+    if(loading){
+      return <h3>Loading</h3>
+    }
     const logout = event => {
         event.preventDefault()
         Auth.logout()
