@@ -4,6 +4,7 @@ import { useState } from "react";
 import { QUERY_QUESTS } from "../../utils/queries"
 
 export default function Quests() {
+
     const [param, setParam] = useState()
 
     const handleChange = (e) => {
