@@ -8,6 +8,7 @@ export default function Quests() {
 
     const handleChange = (e) => {
         setParam(e.target.value);
+
     }
 
     const handleSubmit = (e) => {
@@ -20,26 +21,13 @@ export default function Quests() {
     const { loading, data } = useQuery(QUERY_QUESTS, {
         variables: { username: userParam }
     })
-    const quests = data?.quests || []
+    const quests = data?.quests || [];
 
-    const questList = []
+    if (!quests.length)
 
-    quests.forEach((quest) => {
-        questList.push(
-            <>
-                <ul>
-                    <li><span className="font-bold">Quest: </span>{quest.questTitle}</li>
-                    <li><span className="font-bold">Description: </span>{quest.questDescription}</li>
-                    <li><span className="font-bold">Created: </span>{quest.createdAt}</li>
-                </ul>
-                <br />
-            </>
-        )
-    })
-
-    if (loading) {
-        return <div className="text-white">loading...</div>
-    }
+        if (loading) {
+            return <div className="text-white">loading...</div>
+        }
     return (
         <>
             <div>
@@ -48,7 +36,16 @@ export default function Quests() {
             </div>
             <br />
             <div className="text-white">
-                {questList}
+                {quests && quests.map(quest => (
+                    <>
+                        <ul key={quest._id}>
+                            <li><span className="font-bold">Quest: </span>{quest.questTitle}</li>
+                            <li><span className="font-bold">Description: </span>{quest.questDescription}</li>
+                            <li><span className="font-bold">Created: </span>{quest.createdAt}</li>
+                        </ul>
+                        <br />
+                    </>
+                ))}
             </div>
         </>
     )
