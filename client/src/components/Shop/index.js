@@ -1,21 +1,19 @@
 import React from 'react'
-import shop from "../../assets/shop/shop.webp"
+import shop from "../../assets/shop/shop.png"
 
 export default function Shop() {
-    return (
+    return (   
         <div>
 
-            <body>
+            <body className=" bg-cover bg-gradient-to-b from-blue-400">
                 <div>
-                    <div className="relative py-10">
+                    <div className="relative flex justify-center py-10">
                         <img className=""></img><img src={shop} alt=""></img>
                     </div>
                 </div>
             </body>
-            <h1 className="text-white font-semibold text-lg ">Shop will be opening soon...</h1>
         
-        </div>
-    
+        </div> 
 
     )
 }

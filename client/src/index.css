@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
   margin: 0;
   padding: 0;
 }
@@ -26,6 +25,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 }
 
 .nav {
