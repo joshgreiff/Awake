@@ -2,7 +2,7 @@ import React from "react";
 
 const DashMilestone = ({milestones}) => {
     if(!milestones.length) {
-        <h4>No Milestones</h4>
+        <h4 className="text-black">No Milestones</h4>
     }
 
     return (
