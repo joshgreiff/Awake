@@ -2,16 +2,16 @@ import React from "react";
 
 const DashDailies = ({dailies}) => {
     if(!dailies.length) {
-        <h4>No Dailies</h4>
+        <h4 className="text-black">No Dailies</h4>
     }
 
     return (
-        <div className="daily-div">
+        <div className="daily-div text-black">
             {dailies && dailies.map(daily => (
-                <div className="daily">
+                <div className="daily text-black">
                     
                 <div>
-                    <h4>{daily.dailyTitle}</h4>
+                    <h4 classname="text-black">{daily.dailyTitle}</h4>
                 </div>
                 <div>
                     <p>{daily.dailyDescription}</p>
