@@ -50,3 +50,5 @@ mutation Mutation($questId: ID!, $dailyTitle: String!, $difficulty: String!, $da
   }
 }
 `
+
+
