@@ -8,9 +8,14 @@ import { useQuery } from '@apollo/client'
 import { QUERY_ME } from '../../utils/queries'
 
 export default function Navbar() {
-    const { loading, error, data } = useQuery(QUERY_ME)
+    const {loading, data } = useQuery(QUERY_ME)
   
-console.log(data)
+    if(loading){
+      return(
+        <h1>Loading...</h1>
+      )
+    }
+
     const logout = event => {
         event.preventDefault()
         Auth.logout()
