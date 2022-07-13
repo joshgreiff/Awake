@@ -48,18 +48,18 @@ const userSchema = new Schema(
         ref: 'Quest'
       }
     ],
-    milestones: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Milestone'
-        }
-    ],
-    dailies: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Daily'
-        }
-    ],
+    // milestones: [
+    //     {
+    //       type: Schema.Types.ObjectId,
+    //       ref: 'Milestone'
+    //     }
+    // ],
+    // dailies: [
+    //     {
+    //       type: Schema.Types.ObjectId,
+    //       ref: 'Daily'
+    //     }
+    // ],
     friends: [
       {
         type: Schema.Types.ObjectId,

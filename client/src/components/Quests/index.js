@@ -1,13 +1,56 @@
 import { useParams } from "react-router-dom"
 import { useQuery } from "@apollo/client"
-import { QUERY_USERS } from "../../utils/queries"
+import { useState } from "react";
+import { QUERY_QUESTS } from "../../utils/queries"
 
 export default function Quests() {
+
+    const [param, setParam] = useState()
+
+    const handleChange = (e) => {
+        setParam(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        setParam(e.target.value);
+
+        window.location.replace(`/Quests/${param}`)
+    }
+
+    const { username: userParam } = useParams()
+    const { loading, data } = useQuery(QUERY_QUESTS, {
+        variables: { username: userParam }
+    })
+    const quests = data?.quests || []
+
+    const questList = []
+
+    quests.forEach((quest) => {
+        questList.push(
+            <>
+                <ul>
+                    <li><span className="font-bold">Quest: </span>{quest.questTitle}</li>
+                    <li><span className="font-bold">Description: </span>{quest.questDescription}</li>
+                    <li><span className="font-bold">Created: </span>{quest.createdAt}</li>
+                </ul>
+                <br />
+            </>
+        )
+    })
+
+    if (loading) {
+        return <div className="text-white">loading...</div>
+    }
     return (
-        <div className="fixed py-4 px-2 flex items-center justify-center w-screen h-screen">
-            <div className="relative box-border h-32 p-4 border-4 ">
-                <h1 className="relative text-white text-6xl ">Quest Data Here</h1>
+        <>
+            <div>
+                <input id='questSearch' type="search" placeholder="Enter a username" onChange={handleChange} />
+                <button onClick={handleSubmit} className="text-dark rounded-lg bg-white" type="submit">Search Quests</button>
             </div>
-        </div>
+            <br />
+            <div className="text-white">
+                {questList}
+            </div>
+        </>
     )
 }
