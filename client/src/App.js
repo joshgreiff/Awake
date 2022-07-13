@@ -14,6 +14,7 @@ import Post from './pages/Posts';
 import Sign from './components/Sign-up';
 import Log from './components/Log-in';
 import Profile from './components/Profile'
+import Dashboard from './pages/Dashboard'
 import { ReactDOM } from 'react-dom/client';
 import {  BrowserRouter,  Routes,  Route, } from "react-router-dom";
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import hero from "../../assets/Hero/sunset.png";
 
 export default function Home() {
