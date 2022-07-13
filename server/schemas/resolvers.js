@@ -14,8 +14,6 @@ const resolvers = {
                     .populate('level')
                     .populate('exp')
                     .populate('quests')
-                    .populate('milestones')
-                    .populate('dailies')
 
                 return userData;
             }
@@ -30,8 +28,7 @@ const resolvers = {
                 .populate('level')
                 .populate('exp')
                 .populate('quests')
-                .populate('milestones')
-                .populate('dailies')
+                
         },
         // find one user by username
         user: async (parent, { username }) => {
@@ -43,8 +40,7 @@ const resolvers = {
                 .populate('exp')
                 .populate('friends')
                 .populate('quests')
-                .populate('milestones')
-                .populate('dailies')
+                
         },
         // find all posts
         posts: async (parent, { user }) => {

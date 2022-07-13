@@ -70,7 +70,11 @@ export default function Log(props) {
                             </button>
                         </form>
                 </div>
+<<<<<<< HEAD
                 {error && <div className='text-red-400'>Log In failed</div>}
+=======
+                {error && <div className='text-red'>Log In failed</div>}
+>>>>>>> 4316f473d5a2027db433d85481b6b2b4c7b5a45e
             </div>
       </div>
       

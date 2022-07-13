@@ -2,7 +2,15 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import logo from '../../assets/logo/awake.svg';
 import Auth from '../../utils/auth'
 import coin from '../../assets/coin/A -2.svg'
+
+import { useQuery } from '@apollo/client'
+
+import { QUERY_ME } from '../../utils/queries'
+
 export default function Navbar() {
+    const { loading, error, data } = useQuery(QUERY_ME)
+  
+console.log(data)
     const logout = event => {
         event.preventDefault()
         Auth.logout()
@@ -28,9 +36,14 @@ export default function Navbar() {
               </a>
               <div className='flex align-middle'>
                 <img src={coin} width={30} className='bg-nav-grey'/>
-                <div className='pt-3 pl-1 text-black bg-nav-grey'>0</div>
+                <div className='pt-3 pl-1 text-black bg-nav-grey'>{data.me.coins}</div>
               </div>
+              <div className='flex align-middle'>
+                <div className='pt-3 pl-1 text-black bg-nav-grey'>Level:</div>
                 
+                <div className='pt-3 pl-1 text-black bg-nav-grey'>{data.me.level}</div>
+              </div> 
+            
             </>
           ) : (
             <>
