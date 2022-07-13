@@ -22,7 +22,7 @@ const dashQuests = ({quests, milestones, dailies, title}) => {
                     </div>
                     <p>Milestones:</p>
                     <DashMilestone milestones={milestones} />
-                    <p>Daily Quests</p>
+                    <p>Daily Quests:</p>
                     <DashDailies dailies={dailies} />
                 </div>
             ))}
