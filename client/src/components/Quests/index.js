@@ -26,11 +26,14 @@ export default function Quests() {
 
     quests.forEach((quest) => {
         questList.push(
-            <ul>
-                <li>{quest.questTitle}</li>
-                <li>{quest.questDescription}</li>
-                <li>{quest.createdAt}</li>
-            </ul>
+            <>
+                <ul>
+                    <li><span className="font-bold">Quest: </span>{quest.questTitle}</li>
+                    <li><span className="font-bold">Description: </span>{quest.questDescription}</li>
+                    <li><span className="font-bold">Created: </span>{quest.createdAt}</li>
+                </ul>
+                <br />
+            </>
         )
     })
 
@@ -43,6 +46,7 @@ export default function Quests() {
                 <input id='questSearch' type="search" placeholder="Enter a username" onChange={handleChange} />
                 <button onClick={handleSubmit} className="text-dark rounded-lg bg-white" type="submit">Search Quests</button>
             </div>
+            <br />
             <div className="text-white">
                 {questList}
             </div>
