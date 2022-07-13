@@ -4,8 +4,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context'
 
 
-import Homepage from './components/Homepage';
-import Landing from './components/Landing';
+// import Landing from './components/Landing';
 import Nav from './components/Nav';
 import Home from './components/Homepage';
 import Shop from './components/Shop';
@@ -50,9 +49,6 @@ function App() {
 
         <Nav />
         <div className="container">
-          <div className="w-full max-w-[1440px] mx-auto bg-white">
-          <Hero />
-          </div>
           <Routes>
             <Route path="/" element= {<Home />} />
             <Route path="/Shop" element= {<Shop />} />

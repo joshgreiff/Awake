@@ -70,7 +70,7 @@ export default function Log(props) {
                             </button>
                         </form>
                 </div>
-                {error && <div>Log In failed</div>}
+                {error && <div className='text-red-400'>Log In failed</div>}
             </div>
       </div>
       

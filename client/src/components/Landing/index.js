@@ -1,14 +1,16 @@
+
 import React from 'react';
 import svg from '../../components/Landing/public/img/third-eye.svg'
 import scale from '../../components/Landing/public/img/scale-head.svg'
 import gear from '../../components/Landing/public/img/8.svg'
 import plant from '../../components/Landing/public/img/plant-head.svg'
 
+
 export default function Landing() {
     return (
         <>
-        <div className="App bg-dark">
-        
+        <div className="App">
+        <body className="bg-dark">
     
     <header>
         <nav className="container flex items-center py-4 mt-4 sm:mt-12">
@@ -150,7 +152,7 @@ export default function Landing() {
     
     <section className="bg-primary-purple text-white py-20">
         <div className="container">
-            <div className="sm:w-3/4 lg:w-2/4 mx-auto">
+            <div className="sm:w-3/4 lg:w-2/4 mx-auto #7C2AE8">
                 <p id="contact" className="font-light uppercase text-center mb-8">Stay up to date</p>
                 <h2 className="text-3xl text-center">Enter your email to receive updates</h2>
                 <div className="flex flex-col sm:flex-row gap-6 mt-8">
@@ -189,7 +191,7 @@ export default function Landing() {
         </div>
     </footer>
     <script src="./public/index.js"></script>
-
+</body>
       </div>
         </>
     )

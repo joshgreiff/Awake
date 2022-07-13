@@ -79,7 +79,7 @@ export default function Sign() {
                             </button>
                         </form>
                 </div>
-                {error && <div>Sign up failed</div>}
+                {error && <div className='text-red-400'>Sign up failed</div>}
                 <div className="text-white mt-6">
                     Already have an account?
                     <a
