@@ -247,4 +247,3 @@ query Query($id: ID!) {
     }
   }
 `
-

@@ -2,8 +2,6 @@ const { AuthenticationError, UserInputError } = require('apollo-server-express')
 const { User, Post, Quest, Milestone, Community, Daily } = require('../models');
 const { signToken } = require('../utils/auth');
 
-// ADD LOGIN METHOD/MUTATION
-
 const resolvers = {
     Query: {
         // find all users
