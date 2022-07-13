@@ -13,10 +13,10 @@ export default function Navbar() {
             <img className="Awake" src={logo} alt="React logo"></img> 
         </Link>
         <ul>
-            <CustomLink to="/Shop">Shop</CustomLink>
-            <CustomLink to="/Check">Check-in</CustomLink>
-            <CustomLink to="/Quests">Quests</CustomLink>
+            <CustomLink to="/Dashboard">Dashboard</CustomLink>
+            <CustomLink to="/Social">Social</CustomLink>
             <CustomLink to="/Communities">Communities</CustomLink>
+            <CustomLink to="/Shop">Shop</CustomLink>
         </ul>
         <ul>
             

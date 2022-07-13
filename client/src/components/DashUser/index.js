@@ -8,7 +8,7 @@ const DashUser = ({me}) => {
                 <h3>{me.username}</h3>
             </div>
             <div>
-                <p>You're currently {me.level}</p>
+                <p>You're currently level {me.level}</p>
             </div>
             <div>
                 <p>You have {me.coins} coins</p>

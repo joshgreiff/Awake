@@ -51,7 +51,6 @@ function App() {
         <Nav />
         <div className="container">
           <div className="w-full max-w-[1440px] mx-auto bg-white">
-          <Hero />
           </div>
           <Routes>
             <Route path="/" element= {<Home />} />
@@ -60,7 +59,7 @@ function App() {
               <Route path=":username" element= {<Quests />} />
             </Route>
             <Route path="/Check" element= {<Check />} />
-            <Route path="/Posts" element= {<Post />} />
+            <Route path="/Social" element= {<Post />} />
             <Route path="/Signup" element= {<Sign />} />
             <Route path="/Login" element= {<Log />} />
             <Route path="/profile" element = {<Profile />} />
