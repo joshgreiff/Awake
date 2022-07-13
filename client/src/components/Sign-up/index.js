@@ -79,11 +79,7 @@ export default function Sign() {
                             </button>
                         </form>
                 </div>
-<<<<<<< HEAD
                 {error && <div className='text-red-400'>Sign up failed</div>}
-=======
-                {error && <div className='text-red'>Sign up failed</div>}
->>>>>>> 4316f473d5a2027db433d85481b6b2b4c7b5a45e
                 <div className="text-white mt-6">
                     Already have an account?
                     <a
