@@ -1,6 +1,10 @@
 import { gql } from "@apollo/client"
 
+<<<<<<< HEAD
+export const QUERY_USERS = gql`
+=======
 export const QUERY_USER = gql`
+>>>>>>> 5132fe82460bb3f3af0f30035e823796e140377f
     query user($username:String!){
         user(username:$username){
             _id
@@ -41,6 +45,11 @@ export const QUERY_USER = gql`
         }
     }
 `
+<<<<<<< HEAD
+export const QUERY_QUESTS = gql`
+    query Quests($username: String!) {
+        quests(username: $username) {
+=======
 
 export const QUERY_USERS= gql `
 query Users {
@@ -59,10 +68,16 @@ query Users {
         username
       }
       quests {
+>>>>>>> 5132fe82460bb3f3af0f30035e823796e140377f
         _id
         questTitle
         questDescription
         createdAt
+<<<<<<< HEAD
+        }
+    }
+`
+=======
         username
         milestones {
           _id
@@ -248,3 +263,4 @@ query Query($id: ID!) {
   }
 `
 
+>>>>>>> 5132fe82460bb3f3af0f30035e823796e140377f

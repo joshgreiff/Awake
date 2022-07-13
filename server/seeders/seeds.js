@@ -57,6 +57,6 @@ db.once('open', async () => {
     //     createdQuests.push(createdQuest);
     // }
 
-    console.log("Done");
+    console.log("Done :)");
     process.exit(0);
 })
