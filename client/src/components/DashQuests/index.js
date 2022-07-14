@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const dashQuests = ({quests, title}) => {
     if(!quests.length) {
-        return <h3 className="text-black text-xl lg:py-10">You dont have have any quests yet.</h3>
+        return <h3 className="text-black text-xl lg:py-10">You don't have have any quests yet.</h3>
     }
 
     return (
