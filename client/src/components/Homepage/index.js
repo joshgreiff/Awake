@@ -7,7 +7,7 @@ export default function Home() {
         <div>
             <body>
                 <div className="relative">
-                    <div className="w-screen relative test"
+                    <div className="w-screen relative test flex items-center justify-center"
                         style={{
                             backgroundSize: "cover",
                             backgroundAttachment: "auto",
