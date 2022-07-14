@@ -13,6 +13,12 @@
   height: 81vh;
 }
 
+.container {
+  padding: 0;
+  margin: 0;
+  max-width: 100vw;
+}
+
 
 body {
   margin: 0;
@@ -99,6 +105,11 @@ code {
 
 .bg-image {
   padding: 0;
+}
+
+.shopscreen {
+  margin-top: 20px;
+  background-position: center;
   margin: 0;
 }
 
