@@ -5,7 +5,6 @@ import sign from "../../assets/shop/shop-sign.png"
 export default function Shop() {
     return (   
         <div>
-            <div className="App"></div>
             <body className="bg-cover bg-center bg-gradient-to-b from-blue-400">
                 <div>
                     <div className="relative py-10">
