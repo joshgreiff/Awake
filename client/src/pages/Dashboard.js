@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashPosts from '../components/DashPosts';
 import DashUser from '../components/DashUser';
 import DashQuests from '../components/DashQuests';
@@ -8,8 +8,13 @@ import { useQuery } from '@apollo/client';
 import { Navigate } from 'react-router-dom'
 import { QUERY_ME } from '../utils/queries';
 
+import Modal from '../components/Quest-Modal'
+import ModalPost from '../components/Post-Modal'
 
 const Dashboard = () => {
+    const [openModal, setOpenModal] = useState(false)
+    const [openModalPost, setOpenModalPost] = useState(false)
+
     const { loading, data } = useQuery(QUERY_ME);
     const loggedIn = Auth.loggedIn();
 
@@ -22,9 +27,19 @@ const Dashboard = () => {
     }
 
     return (
-        <><div className="flex justify-center db-center dashboard">
+        <>
+        {openModal && <Modal closeModal={setOpenModal}/>}
+        {openModalPost && <ModalPost closeModalPost={setOpenModalPost}/>}
+
+        <div className="flex justify-center db-center dashboard">
+            
             <div className='quest-section bg-gray-400 text-center border-2 border-black bg-grey-400'>
-                <button className='relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Quest</button>
+                <button className='z-0 openModalBtn relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'
+                        onClick={() => {
+                            setOpenModal(true)
+                        }}
+                >New Quest</button>
+                
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
@@ -45,7 +60,11 @@ const Dashboard = () => {
                     )}
                 </div>
                 <div className='post-section border-2 bg-gray-400 text-center border-black bg-gray-400'>
-                <button className='relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Post</button>
+                <button className='z-0 relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'
+                    onClick={() => {
+                        setOpenModalPost(true)
+                    }}
+                >New Post</button>
                     {loading ? (
                         <div>Loading...</div>
                     ) : (
