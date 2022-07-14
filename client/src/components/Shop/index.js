@@ -1,6 +1,5 @@
 import React from 'react'
-import shop from "../../assets/shop/shop.png"
-import sign from "../../assets/shop/shop-sign.png"
+import shop from "../../assets/shop/shop-with-sign.svg"
 
 export default function Shop() {
     return (   
