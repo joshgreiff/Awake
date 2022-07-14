@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import DashDailies from "../DashDailies";
 import DashMilestone from "../DashMilestone";
 
-const dashQuests = ({quests, milestones, dailies, title}) => {
+const dashQuests = ({quests, title}) => {
     if(!quests.length) {
         return <h3 className="text-black text-xl lg:py-10">You dont have have any quests yet.</h3>
     }
@@ -21,9 +21,9 @@ const dashQuests = ({quests, milestones, dailies, title}) => {
                         <p>{quest.questDescription}</p>
                     </div>
                     <p className="text-black">Milestones:</p>
-                    <DashMilestone milestones={milestones} />
+                    <DashMilestone milestones={quest?.milestones || []} />
                     <p>Daily Quests:</p>
-                    <DashDailies dailies={dailies} />
+                    <DashDailies dailies={quest?.dailies || []} />
                 </div>
             ))}
 

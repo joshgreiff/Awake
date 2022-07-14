@@ -12,6 +12,7 @@ import { QUERY_ME } from '../utils/queries';
 const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_ME);
     console.log(data);
+    console.log(data.me.quests)
     const loggedIn = Auth.loggedIn();
 
     if (!loggedIn) {
@@ -26,9 +27,7 @@ const Dashboard = () => {
                 ) : (
                     <DashQuests
                         quests={data.me.quests}
-                        milestones={data?.me.quests.milestones || []}
-                        dailies={data?.me.quests.dailies || []}
-                        title='Your quests'
+                        title='Your Quests:'
                     />
                 )}
             </div>
@@ -38,7 +37,7 @@ const Dashboard = () => {
                         <div>Loading...</div>
                     ) : (
                         <DashUser
-                            me={data?.me || []}
+                            me={data.me}
                         />
                     )}
                 </div>
@@ -48,7 +47,7 @@ const Dashboard = () => {
                     ) : (
                         <DashPosts
                             posts={data.me.posts}
-                            title='Your posts'
+                            title='Your Posts:'
                         />
                     )}
                 </div>

@@ -1,10 +1,10 @@
 import React from "react";
 
 const DashMilestone = ({milestones}) => {
-    if(!milestones.length) {
+    if(milestones.length === 0) {
         <h4 className="text-black">No Milestones</h4>
     }
-
+    console.log(milestones)
     return (
         <div className="milestone-div">
             {milestones && milestones.map(milestone => (
