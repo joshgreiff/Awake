@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DashPosts = ({posts, title}) => {
     if(!posts.length) {
-        return <h3 className="text-black">You don't have any posts</h3>
+        return <h3 className="text-black text-xl lg:py-10">You don't have any posts</h3>
     }
 
     return (
