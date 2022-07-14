@@ -10,7 +10,7 @@ export default function Home() {
                     <div className="w-screen relative test"
                         style={{
                             backgroundSize: "cover",
-                            backgroundAttachment: "fixed",
+                            backgroundAttachment: "auto",
                             backgroundImage: `url(${hero})`,
                         }}>
                         <div className="hp-text">

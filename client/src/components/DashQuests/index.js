@@ -6,7 +6,7 @@ import DashMilestone from "../DashMilestone";
 
 const dashQuests = ({quests, milestones, dailies, title}) => {
     if(!quests.length) {
-        return <h3 className="text-black">You dont have have any quests yet.</h3>
+        return <h3 className="text-black text-xl lg:py-10">You dont have have any quests yet.</h3>
     }
 
     return (
