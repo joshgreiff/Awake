@@ -11,12 +11,14 @@ import { QUERY_ME } from '../utils/queries';
 
 const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_ME);
-    console.log(data);
-    console.log(data.me.quests)
     const loggedIn = Auth.loggedIn();
 
     if (!loggedIn) {
         return <Navigate to="/login" />
+    }
+
+    if(loading) {
+        return <h3>Loading...</h3>
     }
 
     return (

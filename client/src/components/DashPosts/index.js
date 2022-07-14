@@ -18,7 +18,7 @@ const DashPosts = ({posts, title}) => {
                         <p>{post.postContent}</p>
                     </div>
                     <div className='post-footer-dash'>
-                        Posted by <Link to={`/profile/${post.username}`}>{post.username}</Link> on {post.createdAt}
+                        Posted on {post.createdAt}
                     </div>
                 </div>
             ))}
