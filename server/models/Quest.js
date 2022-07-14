@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
+const dailySchema = require('./Daily')
+const milestoneSchema = require('./Milestone')
 
 const questSchema = new Schema(
   {
@@ -29,18 +31,8 @@ const questSchema = new Schema(
       minlength: 1,
       maxlength: 15
     },
-    milestones: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Milestone'
-        }
-    ],
-    dailies: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Daily'
-        }
-    ],
+    milestones: [milestoneSchema],
+    dailies: [dailySchema],
   },
   {
     toJSON: {

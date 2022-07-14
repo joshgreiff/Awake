@@ -17,6 +17,7 @@ export default function Shop() {
                     </div>
                 </div>
             </body>
+
         
         </div> 
 

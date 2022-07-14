@@ -2,8 +2,6 @@ const { AuthenticationError, UserInputError } = require('apollo-server-express')
 const { User, Post, Quest, Milestone, Community, Daily } = require('../models');
 const { signToken } = require('../utils/auth');
 
-// ADD LOGIN METHOD/MUTATION
-
 const resolvers = {
     Query: {
         // find all users
@@ -16,8 +14,6 @@ const resolvers = {
                     .populate('level')
                     .populate('exp')
                     .populate('quests')
-                    .populate('milestones')
-                    .populate('dailies')
 
                 return userData;
             }
@@ -32,8 +28,6 @@ const resolvers = {
                 .populate('level')
                 .populate('exp')
                 .populate('quests')
-                .populate('milestones')
-                .populate('dailies')
         },
         // find one user by username
         user: async (parent, { username }) => {
@@ -45,8 +39,6 @@ const resolvers = {
                 .populate('exp')
                 .populate('friends')
                 .populate('quests')
-                .populate('milestones')
-                .populate('dailies')
         },
         // find all posts
         posts: async (parent, { user }) => {
@@ -55,7 +47,6 @@ const resolvers = {
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('user')
         },
         // find one post by id
         post: async (parent, { _id }) => {
@@ -63,7 +54,6 @@ const resolvers = {
                 .populate('postTitle')
                 .populate('postContent')
                 .populate('createdAt')
-                .populate('user')
         },
         // get all of a user's quests
         quests: async (parent, { username }) => {
@@ -85,44 +75,42 @@ const resolvers = {
                 .populate('username')
         },
         // get all of a quest's milestones
-        milestones: async (parent, { _id }) => {
-            return Quest.findOne({ _id })
-                .populate('milestones')
-                .populate('milestoneTitle')
-                .populate('milestoneDescription')
-                .populate('username')
-        },
-        milestone: async (parent, { _id }) => {
-            return Milestone.findOne({ _id})
-                .populate('milestoneTitle')
-                .populate('milestoneDescription')
-                .populate('username')
-        },
-        communities: async (parent, args) => {
-            return Community.find()
-                .populate('communityTitle')
-                .populate('communityDescription')
-        },
-        community: async (parent, { _id } ) => {
-            return Community.findOne({ _id: _id })
-                .populate('communityTitle')
-                .populate('communityDescription')
-                .populate('users')
-                .populate('posts')
-                .populate('quests')
-        },
-        dailies: async (parent, { _id }) => {
-            return Quest.findOne({ _id: _id })
-                .populate('dailies')
-        },
-        daily: async (parent, { _id } ) => {
-            return Daily.findOne({ _id: _id })
-                .populate('dailyTitle')
-                .populate('dailyDescription')
-                .populate('username')
-                .populate('difficulty')
-                .populate('timesCompleted')
-        }
+        // milestones: async (parent, { questId }) => {
+        //     return Quest.findOne({ _id: questId })
+        //         .populate('milestones')
+        // },
+        // milestone: async (parent, { _id }) => {
+        //     return Milestone.findOne({ _id})
+        //         .populate('milestoneTitle')
+        //         .populate('milestoneDescription')
+        //         .populate('username')
+        // },
+        // communities: async (parent, args) => {
+        //     return Community.find()
+        //         .populate('communityTitle')
+        //         .populate('communityDescription')
+        // },
+        // community: async (parent, { _id } ) => {
+        //     return Community.findOne({ _id: _id })
+        //         .populate('communityTitle')
+        //         .populate('communityDescription')
+        //         .populate('users')
+        //         .populate('posts')
+        //         .populate('quests')
+        // },
+        // dailies: async (parent, { _id }) => {
+        //     return Quest.findOne({ _id: _id })
+        //         .populate('dailies')
+        //         .populate('username')
+        // },
+        // daily: async (parent, { _id } ) => {
+        //     return Daily.findOne({ _id: _id })
+        //         .populate('dailyTitle')
+        //         .populate('dailyDescription')
+        //         .populate('username')
+        //         .populate('difficulty')
+        //         .populate('timesCompleted')
+        // }
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -150,9 +138,7 @@ const resolvers = {
         },
         addPost: async (parent, args, context) => {
             if (context.user) {
-                console.log(context.user.username)
                 const post = await Post.create({ ...args, username: context.user.username });
-                console.log(post)
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
@@ -182,44 +168,60 @@ const resolvers = {
         },
         addMilestone: async (parent, { questId, milestoneTitle, milestoneDescription }, context ) => {
             if(context.user) {
-                const milestone = await Milestone.create({ milestoneTitle, milestoneDescription, username: context.user.username })
+                // const milestone = await Milestone.create({ milestoneTitle, milestoneDescription, username: context.user.username })
                 
                 
-                await Quest.findOneAndUpdate(
-                    { _id: questId },
-                    { $push: { milestones: milestone._id }},
-                    { new: true }
+                // await Quest.findOneAndUpdate(
+                //     { _id: questId },
+                //     { $push: { milestones: milestone._id }},
+                //     { new: true }
+                // )
+
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $push: { milestones: milestone._id} },
+                //     { new: true}
+                // )
+
+                // return milestone
+
+                const updatedQuest = await Quest.findOneAndUpdate(
+                    { _id : questId },
+                    {$push: { milestones: { milestoneTitle, milestoneDescription, username: context.user.username } } },
+                    { new : true }
                 )
 
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { milestones: milestone._id} },
-                    { new: true}
-                )
-
-                return milestone
+                return updatedQuest;
             }
 
             throw new AuthenticationError('You must be logged in to add a milestone.')
         },
         addDaily: async (parent, { questId, dailyTitle, dailyDescription }, context) => {
             if(context.user) {
-                const daily = await Daily.create({ dailyTitle, dailyDescription, username: context.user.username })
+                // const daily = await Daily.create({ dailyTitle, dailyDescription, username: context.user.username })
                 
                 
-                await Quest.findOneAndUpdate(
+                // await Quest.findOneAndUpdate(
+                //     { _id: questId },
+                //     { $push: { dailies: daily._id }},
+                //     { new: true }
+                // )
+
+                // await User.findOneAndUpdate(
+                //     { _id: context.user._id },
+                //     { $push: { dailies: daily._id} },
+                //     { new: true}
+                // )
+
+                // return daily
+
+                const updatedQuest = await Quest.findOneAndUpdate(
                     { _id: questId },
-                    { $push: { dailies: daily._id }},
+                    { $push: { dailies: { dailyTitle, dailyDescription, username: context.user.username } } },
                     { new: true }
                 )
 
-                await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { dailies: daily._id} },
-                    { new: true}
-                )
-
-                return daily
+                return updatedQuest;
             }
 
             throw new AuthenticationError('You must be logged in to add a daily quest.')

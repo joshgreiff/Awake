@@ -56,7 +56,28 @@ module.exports = (
     hour = 12;
   }
 
-  const minutes = dateObj.getMinutes();
+  let minutes = dateObj.getMinutes();
+  if (minutes === 0) {
+    minutes = '00'
+  } else if (minutes === 1) {
+    minutes = '01'
+  } else if (minutes === 2) {
+    minutes = '02'
+  } else if (minutes === 3) {
+    minutes = '03'
+  } else if (minutes === 4) {
+    minutes = '04'
+  } else if (minutes === 5) {
+    minutes = '05'
+  } else if (minutes === 6) {
+    minutes = '06'
+  } else if (minutes === 7) {
+    minutes = '07'
+  } else if (minutes === 8) {
+    minutes = '08'
+  } else if (minutes === 9) {
+    minutes = '09'
+  }
 
   // set `am` or `pm`
   const periodOfDay = dateObj.getHours() >= 12 ? 'pm' : 'am';
