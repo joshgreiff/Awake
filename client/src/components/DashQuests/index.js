@@ -10,7 +10,7 @@ const dashQuests = ({quests, title}) => {
     }
 
     return (
-        <div>
+        <div className="overflow-y-auto dashboard">
             <h3 className="font">{title}</h3>
             {quests && quests.map(quest => (
                 <div key={quest._id}>

@@ -42,7 +42,7 @@ export default function Modal({ closeModalPost }){
 
 
     return(
-        <div className="modalBackground z-10 text-white" >
+        <div className="modalBackground z-10 text-white dashboard" >
             <div className="modalContainer">
                 <div className="titleCloseBtn">
                     <button onClick={() => closeModalPost(false)}>X</button>
