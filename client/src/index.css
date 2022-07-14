@@ -21,6 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
   padding: 0;
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 }
@@ -67,7 +68,7 @@ body {
 }
 
 .nav li:hover {
-  background-color: #777;
+  color: #777;
 }
 
 code {
@@ -75,6 +76,17 @@ code {
     monospace;
 }
 
+.border-bottom {
+  border-bottom: #555 solid 5px;
+}
+
+.font {
+ font-family: 'Nunito Sans', sans-serif;;
+}
+
+.post-content {
+  min-height: 3rem;
+}
 .test {
   height: 100vh;
 }
