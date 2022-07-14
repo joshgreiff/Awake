@@ -24,7 +24,7 @@ const Dashboard = () => {
     return (
         <><div className="flex justify-center db-center dashboard">
             <div className='quest-section bg-gray-400 text-center border-2 border-black bg-grey-400'>
-                <button className='relative bg-blue-500 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Quest</button>
+                <button className='relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Quest</button>
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
@@ -45,7 +45,7 @@ const Dashboard = () => {
                     )}
                 </div>
                 <div className='post-section border-2 bg-gray-400 text-center border-black bg-gray-400'>
-                <button className='relative bg-blue-500 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Post</button>
+                <button className='relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'>New Post</button>
                     {loading ? (
                         <div>Loading...</div>
                     ) : (

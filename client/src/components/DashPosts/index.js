@@ -14,9 +14,9 @@ const DashPosts = ({posts, title}) => {
                     <div className='post-title-dash'>
                         <Link to={`/post/${post._id}`}><h3 className="font">{post.postTitle}</h3></Link>
                     </div>
-                    <div className='post-content-dash'>
+                    {/* <div className='post-content-dash'>
                         <p className="font">{post.postContent}</p>
-                    </div>
+                    </div> */}
                     <div className='post-footer-dash'>
                         <p className="font">Posted on {post.createdAt}</p>
                     </div>
