@@ -88,3 +88,8 @@ code {
 .bg-image {
   padding: 0;
 }
+
+.shopscreen {
+  margin-top: 20px;
+  background-position: center;
+}
