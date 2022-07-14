@@ -17,9 +17,9 @@ const dashQuests = ({quests, title}) => {
                     <div className="quest-title-dash" >
                         <h3 className="font">{quest.questTitle}</h3>
                     </div>
-                    <div className="quest-description-dash">
+                    {/* <div className="quest-description-dash">
                         <p className="font">{quest.questDescription}</p>
-                    </div>
+                    </div> */}
                     <p className="text-black font">Milestones: {quest.milestones.length}</p>
                     {/* <DashMilestone milestones={quest?.milestones || []} /> */}
                     <p className="font">Daily Quests: {quest.dailies.length}</p>

@@ -50,8 +50,8 @@ export default function Navbar() {
             </>
           ) : (
             <>
-                <Link to="/Login font">Login</Link>
-                <Link to="/Signup font">Sign Up!</Link>
+                <Link to="/Login" className='font'>Login</Link>
+                <Link to="/Signup" className='font'>Sign Up!</Link>
             </>
           )}
         </ul>
