@@ -21,11 +21,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< HEAD
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-=======
   padding: 0;
->>>>>>> b60fb481f71b128c773d4c5663fa1a08819bd5fe
 }
 
 .nav {
