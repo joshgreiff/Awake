@@ -6,7 +6,7 @@
 <img width="1511" alt="Screen Shot 2022-07-20 at 1 28 21 PM" src="https://user-images.githubusercontent.com/93888416/180045293-8488d143-26a3-42dc-b651-66d300ed91eb.png">
 
 ## About our Project
-Awake is an appliaction that tries to simplify the challenge of meeting your personal goals into something more familiar to most people. Awake helps you "Gamify" your life and allows you to set yourself quests, within thos quests are milestones and daily quests to help you see you progress even when the goal seems so far away.
+Awake is an appliaction that tries to simplify the challenge of meeting your personal goals into something more familiar to most people. Awake helps you "Gamify" your life and allows you to set yourself quests, within those quests are milestones and daily quests to help you see you progress even when the goal seems so far away.
 ## Technologies Used
 * React
 * TailwindCSS
