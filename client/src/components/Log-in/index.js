@@ -36,7 +36,7 @@ export default function Log(props) {
 
     return( 
         
-        <div className="bg-grey-lighter min-h-screen flex flex-col">
+        <div className="bg-grey-lighter min-h-screen flex flex-col  mx-[10%] sm:mx-[20%] lg:mx-[30%]">
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                     <h1 className="mb-8 text-3xl text-center bg-white">Log In</h1>

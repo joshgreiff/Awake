@@ -5,7 +5,7 @@ import hero from "../../assets/Hero/sunset.png";
 export default function Home() {
     return (
         <div>
-            <body>
+            {/* <body> */}
                 <div className="relative">
                     <div className="w-screen relative test flex items-center justify-center"
                         style={{
@@ -25,7 +25,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </body>
+            {/* </body> */}
         </div>
     )
 }

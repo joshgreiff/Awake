@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
@@ -41,14 +41,60 @@ const client = new ApolloClient({
 
 
 function App() {
-  return (
+    const [navView, navViewToggle] = useState('!hidden')
+    const [hamburegerView, hamburegerViewToggle] = useState('')
+    const [xView, xViewToggle] = useState('hidden')
+    const [animate, animateToggle] = useState('')
+    const [pageView, setPageView] = useState('')
+    const [logoView, setLogoView] = useState('')
+    const [navContainerView, setNavContainerView] = useState('')
 
+
+    const closeMenu = function (event) {
+            animateToggle('origin-top animate-close-menu')
+            setTimeout(() => {
+                navViewToggle('!hidden')
+                setPageView('')
+                hamburegerViewToggle('')
+                xViewToggle('hidden')
+                setLogoView('block')
+                setNavContainerView('')
+            }, 501)
+        }
+
+    const openMenu = function() {
+        animateToggle('origin-top animate-open-menu')
+        navViewToggle('flex flex-col absolute top-[20%] left-[38%] items-center')
+        setPageView('hidden')
+        hamburegerViewToggle('hidden')
+        xViewToggle('block')
+        setLogoView('hidden')
+        setNavContainerView('h-100vh')
+    }
+
+    const toggleMenu = function(){
+        if(xView === '' || xView === 'hidden') {
+            openMenu()
+        }else if(hamburegerView ==='hidden'){
+            closeMenu()
+        }
+    }
+
+  return (
 
     <ApolloProvider client={client}>
 
-
-        <Nav />
-        <div className="container">
+        <Nav 
+        navView = {navView}
+        hamburegerView = {hamburegerView}
+        xView = {xView}
+        animate = {animate}
+        pageView = {pageView}
+        logoView = {logoView}
+        toggleMenu = {toggleMenu}
+        navContainerView = {navContainerView}
+        />
+        <div className={`container ${pageView}`}>
           <Routes>
             <Route path="/" element= {<Home />} />
             <Route path="/Shop" element= {<Shop />} />

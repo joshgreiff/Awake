@@ -1,4 +1,6 @@
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+
+
 import logo from '../../assets/logo/awake.svg';
 import Auth from '../../utils/auth'
 import coin from '../../assets/coin/A -2.svg'
@@ -7,30 +9,44 @@ import { useQuery } from '@apollo/client'
 
 import { QUERY_ME } from '../../utils/queries'
 
-export default function Navbar() {
-    const {loading, data } = useQuery(QUERY_ME)
-  
-// console.log(data)
-    if(loading){
-      return <h3>Loading</h3>
-    }
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
+
+export default function Navbar(props) {
+
+
     const logout = event => {
         event.preventDefault()
         Auth.logout()
     }
+    
+    const {loading, data } = useQuery(QUERY_ME)
+      
+    if(loading){
+        return <h3>Loading</h3>
+    }
+
     return (
-    <nav className="nav">
-        <Link to="/">
-            <img className="Awake" src={logo} alt="React logo"></img> 
+    <nav className={`nav ${props.navContainerView}`}>
+        <div id="icon-container" className="my-auto lg:hidden cursor-pointer" onClick={props.toggleMenu}>
+          <FontAwesomeIcon icon={faBars} className={`sm:hidden my-auto ${props.hamburegerView}`} size='xl' id="hamburger-menu"/>
+          <FontAwesomeIcon icon={faX} className={`${props.xView} !absolute top-[10px] left-[15px]`} size='xl' id="x-button"/>
+        </div>
+        
+
+        <Link className='mx-auto sm:ml-[15px] !pr-[50px]' to="/">
+            <img className={`Awake ${props.logoView}`} src={logo} alt="React logo"></img> 
         </Link>
-        <ul>
-            <CustomLink to="/Dashboard" className="font">Dashboard</CustomLink>
-            <CustomLink to="/Social" className="font">Social</CustomLink>
-            <CustomLink to="/Communities" className="font">Communities</CustomLink>
-            <CustomLink to="/Shop" className="font">Shop</CustomLink>
-        </ul>
-        <ul>
-            
+
+        <ul className={`sm:!flex ${props.navView} ${props.animate}`}>
+
+            <CustomLink to="/Dashboard" className={`font text-center`}>Dashboard</CustomLink>
+            <CustomLink to="/Social" className={`font text-center`}>Social</CustomLink>
+            <CustomLink to="/Communities" className={`font text-center`}>Communities</CustomLink>
+            <CustomLink to="/Shop" className={`font text-center`}>Shop</CustomLink>
+
             {Auth.loggedIn() ? (
             <>
               {/* <Link to ="/profile">Me</Link> */}
@@ -48,19 +64,26 @@ export default function Navbar() {
               </div> 
             
             </>
-          ) : (
-            <>
-                <Link to="/Login" className='font'>Login</Link>
-                <Link to="/Signup" className='font'>Sign Up!</Link>
+            ) : (
+            <>  <li className='list-item'>
+                  <Link to="/Login" className='font'>Login</Link>
+                </li>
+                <li>
+                  <Link to="/Signup" className='font'>Sign Up</Link>
+                </li>
             </>
-          )}
+            )}
         </ul>
+        {/* <ul> */}
+            
+            
+        {/* </ul> */}
     </nav>
 
     )
 }
 
-function CustomLink({ to, children, ...props }) {
+    function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to)
     const isActive = useMatch({ path: resolvedPath.pathname, end: true })
     return (
