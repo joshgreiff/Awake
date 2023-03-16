@@ -31,7 +31,7 @@ const Dashboard = () => {
         {openModal && <Modal closeModal={setOpenModal}/>}
         {openModalPost && <ModalPost closeModalPost={setOpenModalPost}/>}
 
-        <div className="flex justify-center px-[20px] my-auto db-center dashboard ">
+        <div className="flex justify-center px-[10px] my-auto db-center dashboard ">
             
             <div className='quest-section bg-gray-400 text-center border-2 border-black bg-grey-400'>
                 <button className='z-0 openModalBtn relative bg-blue-500 hover:bg-blue-600 rounded-lg overflow-hidden text-white px-3 py-2 group mt-1 font'
