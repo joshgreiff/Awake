@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './output.css';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
 
