@@ -47,7 +47,7 @@ img {
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .Awake {
