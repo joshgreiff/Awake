@@ -1,4 +1,7 @@
 {
+   "engines": {
+      "node": "16.13"
+   },
    "main": "server/server.js",
    "dependencies": {
       "concurrently": "^7.2.2",
