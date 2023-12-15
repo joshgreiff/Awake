@@ -6,7 +6,7 @@
 <img width="1511" alt="Screen Shot 2022-07-20 at 1 28 21 PM" src="https://user-images.githubusercontent.com/93888416/180045293-8488d143-26a3-42dc-b651-66d300ed91eb.png">
 
 ## About our Project
-Awake is an application that aims to ease the stress one faces whilst working to maintain one’s goals. The application is made to transport its user into a virtual world that provides an efficient plan to manage its user’s goals which, in turn, maximizes their experience. Once the user creates quests to grow their character, milestones will appear — further promoting a sense of accomplishment within oneself. Each milestone increases the level of the user’s character while adding heightened skills and abilities to their persona. By creating one’s own pathway to success, the user may feel closer to reaching their goal — regardless of its distance.
+Awake is an application that aims to ease the stress one faces whilst working to maintain one’s goals. The application is made to transport its user into a virtual world that provides an efficient plan to manage its user’s goals which, in turn, maximizes their experience. Once the user creates quests to grow their character, milestones will appear — further promoting a sense of accomplishment within oneself. Each milestone increases the level of the user’s character while adding heightened skills and abilities to their persona. By creating one’s own pathway to success, the user will feel closer to reaching their goal — regardless of its distance.
 ## Technologies Used
 * React
 * TailwindCSS
