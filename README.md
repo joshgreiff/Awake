@@ -20,7 +20,7 @@ Awake is an application that aims to ease the stress one faces whilst working to
 * CSS
 * Javascript
 ## Deployed Application
-https://intelligent-mandarine-12379.herokuapp.com/](https://awake-app-acc7c7c239f1.herokuapp.com/
+https://awake-app-acc7c7c239f1.herokuapp.com/
 The application is currently deployed with heroku, however the styling provided by Tailwind is not working in the current build. If you would like to deploy the application locally you can.
 ### Local Deployment
 To deploy the app locally, first run "npm install" in the root directory. once you have installed all npm packages you can run "npm run develop" from the root directory to launch the server and front end app.
